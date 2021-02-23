@@ -1,13 +1,13 @@
-﻿if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
+﻿if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit } Out-Null
 
 #Addtype
-[System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName PresentationFramework
-[System.Windows.Forms.Application]::EnableVisualStyles()
+[System.Windows.Forms.Application]::EnableVisualStyles() | Out-Null
 
 $t = '[DllImport("user32.dll")] public static extern bool ShowWindow(int handle, int state);'
 add-type -name win -member $t -namespace native
-[native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0)
+[native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0) | Out-Null
 
 
 # ------------------------------------------------------------------------
@@ -148,7 +148,6 @@ $btn_Start.Add_Click({ step1 })
 $btn_ClipWrite.Add_Click({ step2 })
 $btn_End.Add_Click({ step3 })
 $btn_SaveXML.Add_Click({ step4 })
-$btn_gendocx.Add_Click({ step5 })
 
 
 function step1 {
@@ -176,7 +175,6 @@ function step3 {
 function step4 {
     SaveXML
     $btn_SaveXML.IsEnabled = $false
-    $btn_gendocx.IsEnabled = $true
 }
 
 function Parsing {
@@ -211,8 +209,9 @@ function SaveXML {
             $MobileXML.'MOBILE-Check'."MO-0$num".RESULT = "N"
         }
 
-    }    
-    $MobileXML.Save("$PSScriptRoot\docx\MOBILE_"+$tb_ModelName+"_Result_Before.xml")
+    }
+    [string]$root = Get-Location
+    $MobileXML.Save("$root\MOBILE_"+$tb_ModelName+"_Result_Before.xml")
 
     foreach($num in 0..($tgle_after.Count - 1))
     {
@@ -229,7 +228,9 @@ function SaveXML {
         }
 
     }
-    $MobileXML.Save("$PSScriptRoot\docx\MOBILE_"+$tb_ModelName+"_Result_After.xml")
+
+    $MobileXML.'MOBILE-Check'.START_TIME = $tb_EndTime.Text
+    $MobileXML.Save("$root\MOBILE_"+$tb_ModelName+"_Result_After.xml")
 
 }
 
