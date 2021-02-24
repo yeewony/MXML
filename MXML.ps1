@@ -1,13 +1,13 @@
-﻿if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit } Out-Null
+﻿#if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit } Out-Null
 
 #Addtype
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName PresentationFramework
-[System.Windows.Forms.Application]::EnableVisualStyles() | Out-Null
+[System.Windows.Forms.Application]::EnableVisualStyles()
 
-$t = '[DllImport("user32.dll")] public static extern bool ShowWindow(int handle, int state);'
-add-type -name win -member $t -namespace native
-[native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0) | Out-Null
+# $t = '[DllImport("user32.dll")] public static extern bool ShowWindow(int handle, int state);'
+# add-type -name win -member $t -namespace native
+# [native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0)
 
 
 # ------------------------------------------------------------------------
@@ -75,7 +75,7 @@ $gui_xmal = @'
         <ToggleButton x:Name="tgle_bf_02" Width="40" Height="30" BorderThickness="0"  Margin="203,278,0,0" BorderBrush="White" Background="#FFAE3E3E" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False"/>
         <ToggleButton x:Name="tgle_af_02" Width="40" Height="30" BorderThickness="0"  Margin="259,278,0,0" BorderBrush="White" Background="#FFAE3E3E" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False"/>
         <Button x:Name="btn_SaveXML" Content="4. XML 생성" HorizontalAlignment="Left" Margin="358,350,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
-        <Label Content="Powered by. DinnerAtHome" Margin="358,465,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" Foreground="#FFBDBDBD"/>
+        <Label Content="From 11217" Margin="358,465,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Foreground="#FFB1B1B1"/>
     </Grid>
 </Window>
 '@
@@ -175,6 +175,7 @@ function step3 {
 function step4 {
     SaveXML
     $btn_SaveXML.IsEnabled = $false
+    [System.Windows.MessageBox]::Show('XML 생성 완료')
 }
 
 function Parsing {
