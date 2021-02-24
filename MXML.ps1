@@ -175,7 +175,6 @@ function step3 {
 function step4 {
     SaveXML
     $btn_SaveXML.IsEnabled = $false
-    [System.Windows.MessageBox]::Show('XML 생성 완료')
 }
 
 function Parsing {
@@ -232,6 +231,8 @@ function SaveXML {
 
     $MobileXML.'MOBILE-Check'.START_TIME = $tb_EndTime.Text
     $MobileXML.Save("$root\MOBILE_"+$tb_ModelName+"_Result_After.xml")
+
+    [System.Windows.MessageBox]::Show('XML 생성 완료')
 
 }
 
