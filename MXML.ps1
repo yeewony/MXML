@@ -89,7 +89,7 @@ $gui_xmal.SelectNodes("//*[@Name]") | ForEach-Object { Set-Variable -Name ($_.Na
 
 $tgle_all = $tgle_af_01, $tgle_af_02, $tgle_af_03, $tgle_af_04, $tgle_af_05, $tgle_af_06, $tgle_af_07, $tgle_bf_01, $tgle_bf_02, $tgle_bf_03, $tgle_bf_04, $tgle_bf_05, $tgle_bf_06, $tgle_bf_07
 $global:tgle_after = $tgle_af_01, $tgle_af_02, $tgle_af_03, $tgle_af_04, $tgle_af_05, $tgle_af_06, $tgle_af_07
-$GLOBAL:tgle_before = $tgle_bf_01, $tgle_bf_02, $tgle_bf_03, $tgle_bf_04, $tgle_bf_05, $tgle_bf_06, $tgle_bf_07
+$global:tgle_before = $tgle_bf_01, $tgle_bf_02, $tgle_bf_03, $tgle_bf_04, $tgle_bf_05, $tgle_bf_06, $tgle_bf_07
 
 # ------------------------------------------------------------------------
 
