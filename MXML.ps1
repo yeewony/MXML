@@ -17,10 +17,10 @@ Add-Type -AssemblyName PresentationFramework
 # ------------------------------------------------------------------------
 
 $gui_xmal = @'
-<Window 
+<Window x:Name="Main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MXML" Height="533" Width="703" Background="#FFE2E2E2" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontSize="10">
+        Title="MXML 1.02.26" Height="533" Width="703" Background="#FFE2E2E2" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontSize="10">
     <Window.Resources>
         <Style TargetType="ToggleButton">
             <Setter Property="Content" Value="취약"/>
@@ -68,14 +68,15 @@ $gui_xmal = @'
         <Label Content="점검 후" HorizontalAlignment="Left" Margin="259,212,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" FontStyle="Italic"/>
         <TextBox x:Name="tb_ClipData" HorizontalAlignment="Left" Height="145" Margin="358,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" AcceptsReturn="True" BorderThickness="0" VerticalScrollBarVisibility="Auto"/>
         <Label Content="↓아래에 복사한 클립보드를 붙여넣기 하세요" HorizontalAlignment="Left" Margin="358,10,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="btn_Start" Content="1. 점검 시작" HorizontalAlignment="Left" Margin="358,215,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16"/>
-        <Button x:Name="btn_ClipWrite" Content="2. 클립보드 입력" HorizontalAlignment="Left" Margin="358,260,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
-        <Button x:Name="btn_End" Content="3. 점검 종료" HorizontalAlignment="Left" Margin="358,305,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
+        <Button x:Name="btn_Start" Content="1. 점검 시작" HorizontalAlignment="Left" Margin="399,221,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16"/>
+        <Button x:Name="btn_ClipWrite" Content="2. 클립보드 입력" HorizontalAlignment="Left" Margin="399,266,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
+        <Button x:Name="btn_End" Content="3. 점검 종료" HorizontalAlignment="Left" Margin="399,311,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
         <Label Content="* 구글플레이 프로텍트 인증" HorizontalAlignment="Left" Margin="10,278,0,0" VerticalAlignment="Top" Height="30" VerticalContentAlignment="Center"/>
         <ToggleButton x:Name="tgle_bf_02" Width="40" Height="30" BorderThickness="0"  Margin="203,278,0,0" BorderBrush="White" Background="#FFAE3E3E" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False"/>
         <ToggleButton x:Name="tgle_af_02" Width="40" Height="30" BorderThickness="0"  Margin="259,278,0,0" BorderBrush="White" Background="#FFAE3E3E" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False"/>
-        <Button x:Name="btn_SaveXML" Content="4. XML 생성" HorizontalAlignment="Left" Margin="358,350,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
-        <Label Content="From 11217" Margin="358,465,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Foreground="#FFB1B1B1"/>
+        <Button x:Name="btn_SaveXML" Content="4. XML 생성" HorizontalAlignment="Left" Margin="399,356,0,0" VerticalAlignment="Top" Width="234" Background="#FFB0EFF5" Height="40" BorderThickness="0" FontSize="16" IsEnabled="False"/>
+        <Label Content="From 11217" Margin="358,453,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Foreground="#FF8E8E8E"/>
+        <Label x:Name="lb_Version" Content="1.02.26" HorizontalAlignment="Right" Margin="0,453,19.8,0" VerticalAlignment="Top" FontSize="13"/>
     </Grid>
 </Window>
 '@
@@ -148,10 +149,11 @@ $btn_Start.Add_Click({ step1 })
 $btn_ClipWrite.Add_Click({ step2 })
 $btn_End.Add_Click({ step3 })
 $btn_SaveXML.Add_Click({ step4 })
+$GUI.Add_Loaded({ chkver })
 
 
 function step1 {
-    $tb_StartTime.Text = (Get-Date).ToString()
+    $tb_StartTime.Text = (Get-Date -Format "yyyy-MM-dd HH:mm:ss").ToString()
     $btn_ClipWrite.IsEnabled = $true
     $btn_Start.IsEnabled = $false
 
@@ -167,7 +169,7 @@ function step2 {
 }
 
 function step3 {
-    $tb_EndTime.Text = (Get-Date).ToString()
+    $tb_EndTime.Text = (Get-Date -Format "yyyy-MM-dd HH:mm:ss").ToString()
     $btn_SaveXML.IsEnabled = $true
     $btn_End.IsEnabled = $false
 }
@@ -233,6 +235,18 @@ function SaveXML {
     $MobileXML.Save("$root\MOBILE_"+$tb_ModelName+"_Result_After.xml")
 
     [System.Windows.MessageBox]::Show('XML 생성 완료')
+
+}
+
+function chkver {
+    $nowver = cat \\10.1.8.4\windata\NEW_TEAM_1\11217\root\mxml\version
+    [string]$thisver = $lb_Version.Content
+
+    if ($thisver -ne $nowver)
+    {        
+        [System.Windows.Forms.MessageBox]::Show("최신 버전으로 업데이트 하세요","버전 체크")
+    }
+
 
 }
 
