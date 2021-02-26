@@ -244,7 +244,7 @@ function chkver {
 
     if ($thisver -ne $nowver)
     {        
-        [System.Windows.Forms.MessageBox]::Show("최신 버전으로 업데이트 하세요","버전 체크")
+        [System.Windows.Forms.MessageBox]::Show("최신 버전 : $nowver\r최신 버전으로 업데이트 하세요","버전 체크")
     }
 
 
