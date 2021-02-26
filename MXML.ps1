@@ -239,7 +239,7 @@ function SaveXML {
 }
 
 function chkver {
-    $nowver = cat \\10.1.8.4\windata\NEW_TEAM_1\11217\root\mxml\version
+    $nowver = Get-Content \\10.1.8.4\windata\NEW_TEAM_1\11217\root\mxml\version
     [string]$thisver = $lb_Version.Content
 
     if ($thisver -ne $nowver)
