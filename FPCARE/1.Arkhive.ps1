@@ -24,17 +24,17 @@ $docxpath = Get-ChildItem -Path $localpath -Filter *.docx | % {$_.FullName}
 $pdfpath = Get-ChildItem -Path $localpath -Filter *.pdf | % {$_.FullName}
 
 
-if(!$wmvpath)
+if($wmvpath -eq $null)
 {
     Write-Host "동영상이 없습니다."
     $Err = 1
 }
-if(!$resultzippath)
+if($resultzippath -eq $null)
 {   Write-Host "점검결과.ZIP 파일이 없습니다." 
     $Err = 1
 }
 
-if(!$docxpath)
+if($docxpath -eq $null)
 {
     Write-Host "보고서 파일이 없습니다." 
     $Err = 1
@@ -53,7 +53,7 @@ if(!$docxpath)
 if($Err -ne 1)
 {    
     mkdir -Path "tmp" | Out-Null
-    Expand-Archive $resultzippath -DestinationPath "$localpath\tmp"
+    Expand-Archive $resultzippath -DestinationPath "$localpath\tmp" | Out-Null
 
     #zip 파일 갯수 확인 검사
     if(!(Get-ChildItem -Path "$localpath\tmp" -Filter *.txt))
@@ -96,6 +96,8 @@ if($Err -ne 1)
         [int]$foldername = $xml.'PC-Check'.START_TIME.Split()[2].Split(":")[0]
     }
 
+    $foldername
+
     if($foldername -lt 10)
     {
         [string]$foldername = "0"+[string]$foldername
@@ -104,6 +106,8 @@ if($Err -ne 1)
     {
         [string]$foldername = [string]$foldername
     }
+
+    $foldername
 
     #시간 폴더 생성
     mkdir -Path "$localpath\$foldername" | Out-Null
@@ -117,12 +121,7 @@ if($Err -ne 1)
 #                               파일 옮기기
 #
 #-----------------------------------------------------------------------------#
-
-    Move-Item -Path $wmvpath -Destination "$localpath\$foldername"
-    Move-Item -Path $resultzippath -Destination "$localpath\$foldername"
-    Move-Item -Path $datazippath -Destination "$localpath\$foldername"
-    Move-Item -Path $docxpath -Destination "$localpath\$foldername"
-    Move-Item -Path $pdfpath -Destination "$localpath\$foldername"   
+  
 
 }
 
