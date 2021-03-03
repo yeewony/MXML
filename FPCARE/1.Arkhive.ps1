@@ -96,8 +96,6 @@ if($Err -ne 1)
         [int]$foldername = $xml.'PC-Check'.START_TIME.Split()[2].Split(":")[0]
     }
 
-    $foldername
-
     if($foldername -lt 10)
     {
         [string]$foldername = "0"+[string]$foldername
@@ -106,8 +104,6 @@ if($Err -ne 1)
     {
         [string]$foldername = [string]$foldername
     }
-
-    $foldername
 
     #시간 폴더 생성
     mkdir -Path "$localpath\$foldername" | Out-Null
@@ -122,6 +118,11 @@ if($Err -ne 1)
 #
 #-----------------------------------------------------------------------------#
   
+    Move-Item -Path $wmvpath -Destination "$localpath\$foldername"
+    Move-Item -Path $resultzippath -Destination "$localpath\$foldername"
+    Move-Item -Path $datazippath -Destination "$localpath\$foldername"
+    Move-Item -Path $docxpath -Destination "$localpath\$foldername"
+    Move-Item -Path $pdfpath -Destination "$localpath\$foldername" 
 
 }
 
