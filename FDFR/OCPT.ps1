@@ -78,7 +78,7 @@ function CaptureDefender
     #윈도우디펜더 창 열기
     start-process windowsdefender://threat
     #스크린샷을 위한 대기
-    Start-Sleep -s 1
+    Start-Sleep -s 0.7
     #프린트스크린
     [system.windows.forms.sendkeys]::sendwait('%{PRTSC}')
     #클립보드에 붙이고 이름 출력
@@ -87,7 +87,6 @@ function CaptureDefender
     $defender = Get-Process -Name "sec*ui"
     $defender.Kill()
 }
-
 
 function mkdirbyMM
 {

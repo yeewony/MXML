@@ -1,14 +1,25 @@
 ﻿#----------------------------------------------------------------------#
-#                   아래 항목을 잘 입력하세요.
-#                  팀 ex) 1팀 => $team ="1"
+#            아래 이름 항목을 본인의 이름에 맞게 수정하세요
+#                  
 #
 
-$name = "이asdf름"
-$team = "1"
+$name = "여러분의 이름"
 
 #
 #
 #----------------------------------------------------------------------#
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -45,7 +56,8 @@ $date = (Get-Date -Format "yyyyMMdd").ToString()
 $month = (Get-Date -Format "MM").ToString()
 #저장경로
 $filename = "$date"+"_"+"$name.png"
-[string]$rootpath = "\\10.1.8.4\windata\NEW_TEAM_$team\defender\$month"
+[string]$rootpath = $PSScriptRoot
+#"\\10.1.8.4\windata\NEW_TEAM_1\defender\$month\$day"
 
 
 #----------------------------------------------------------------------#
@@ -54,8 +66,22 @@ $filename = "$date"+"_"+"$name.png"
 #
 #----------------------------------------------------------------------#
 
+$code = @"
+    [DllImport("user32.dll")]
+    public static extern bool BlockInput(bool fBlockIt);
+"@
+
+$userInput = Add-Type -MemberDefinition $code -Name UserInput -Namespace UserInput -PassThru
+
+function Disable-UserInput($seconds) {
+    $userInput::BlockInput($true)
+    Start-Sleep $seconds
+    $userInput::BlockInput($false)
+}
+
 function CaptureDefender
 {
+    Disable-UserInput -seconds 2 | Out-Null
     #윈도우디펜더 창 열기
     start-process windowsdefender://threat
     #스크린샷을 위한 작업
@@ -70,28 +96,17 @@ function CaptureDefender
 }
 
 
-function mkdirbyMM
-{
-    #폴더 쳌킹
-    if(![System.IO.File]::Exists("$rootpath"))
-    {
-        New-Item -ItemType Directory -Path "$rootpath"
-    }
-}
-
 #작업 시작
 if($isWednesday -eq 3)
 {
-    Start-Job -Name Fullscanday -ScriptBlock { Start-MpScan -ScanType FullScan } | Out-Null
-    Wait-Job -Name Fullscanday | Out-Null
-    mkdirbyMM
+    #Start-Job -Name Fullscanday -ScriptBlock { Start-MpScan -ScanType FullScan } | Out-Null
+    #Wait-Job -Name Fullscanday | Out-Null
     CaptureDefender
 }
 else
 {
-    Start-Job -Name Quickscanday -ScriptBlock { Start-MpScan -ScanType QuickScan } | Out-Null
-    Wait-Job -Name Quickscanday | Out-Null
-    mkdirbyMM
+    #Start-Job -Name Quickscanday -ScriptBlock { Start-MpScan -ScanType QuickScan } | Out-Null
+    #Wait-Job -Name Quickscanday | Out-Null
     CaptureDefender
 }
 
