@@ -24,5 +24,13 @@ namespace gui
         {
             InitializeComponent();
         }
+
+        private void btn_Start_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime Currenttime = DateTime.Now;
+            string starttime = Currenttime;
+
+            
+        }
     }
 }

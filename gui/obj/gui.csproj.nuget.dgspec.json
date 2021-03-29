@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yeewony\\Desktop\\PCCARE\\gui\\gui.csproj": {}
+    "C:\\Users\\11217\\Desktop\\PCCARE\\gui\\gui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yeewony\\Desktop\\PCCARE\\gui\\gui.csproj": {
+    "C:\\Users\\11217\\Desktop\\PCCARE\\gui\\gui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yeewony\\Desktop\\PCCARE\\gui\\gui.csproj",
+        "projectUniqueName": "C:\\Users\\11217\\Desktop\\PCCARE\\gui\\gui.csproj",
         "projectName": "gui",
-        "projectPath": "C:\\Users\\Yeewony\\Desktop\\PCCARE\\gui\\gui.csproj",
-        "packagesPath": "C:\\Users\\Yeewony\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yeewony\\Desktop\\PCCARE\\gui\\obj\\",
+        "projectPath": "C:\\Users\\11217\\Desktop\\PCCARE\\gui\\gui.csproj",
+        "packagesPath": "C:\\Users\\11217\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11217\\Desktop\\PCCARE\\gui\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yeewony\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\11217\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
