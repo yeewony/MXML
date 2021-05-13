@@ -1,0 +1,12 @@
+<PC-07> 
+<NAME>어도비 플래시 플레이어 최신 업데이트 적용</NAME> 
+<DATA> <![CDATA[   
+ 
+*어도비 플래시 플레이어 버전  
+]]> </DATA> 
+<RESULT_COMMENT> 
+[양호] AdobeFlashPlayer 최신버전( ) 사용중이이므로 양호함 
+</RESULT_COMMENT> 
+<RESULT>Y</RESULT> 
+</PC-07> 
+ 

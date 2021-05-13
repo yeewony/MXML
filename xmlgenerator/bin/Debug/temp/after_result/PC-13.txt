@@ -1,0 +1,14 @@
+<PC-13> 
+<NAME>이동식 미디어 자동실행 방지</NAME> 
+<DATA> <![CDATA[   
+ 
+# reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" | findstr "DisableAutoplay" 
+    DisableAutoplay    REG_DWORD    0x1
+ 
+]]> </DATA> 
+<RESULT_COMMENT> 
+[양호] 이동식 미디어가 자동실행되지 않으므로 양호함 
+</RESULT_COMMENT> 
+<RESULT>Y</RESULT> 
+</PC-13> 
+ 

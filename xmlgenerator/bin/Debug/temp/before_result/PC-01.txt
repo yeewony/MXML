@@ -1,0 +1,11 @@
+<PC-01> 
+<NAME>로그인 패스워드 설정</NAME> 
+<DATA> <![CDATA[   
+로그인 패스워드가 설정되어 있는지 확인 
+]]> </DATA> 
+<RESULT_COMMENT> 
+[양호] 패스워드가 설정되어 있으므로 양호함 
+</RESULT_COMMENT> 
+<RESULT>Y</RESULT> 
+</PC-01> 
+ 

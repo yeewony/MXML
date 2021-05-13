@@ -1,0 +1,23 @@
+<PC-12> 
+<NAME>화면보호기 대기시간 설정 재시작 시 암호화</NAME> 
+<DATA> <![CDATA[   
+ 
+# reg query "HKCU\Control Panel\Desktop" | find "ScreenSaveTimeout"  
+
+HKEY_CURRENT_USER\Control Panel\Desktop
+    ScreenSaveTimeout    REG_SZ    600
+
+ 
+# reg query "HKCU\Control Panel\Desktop" | find "ScreenSaverIsSecure" 
+
+HKEY_CURRENT_USER\Control Panel\Desktop
+    ScreenSaverIsSecure    REG_SZ    1
+
+ 
+]]> </DATA> 
+<RESULT_COMMENT> 
+[양호] 화면보호기가 적절하게 설정되어 있으므로 양호함 
+</RESULT_COMMENT> 
+<RESULT>Y</RESULT> 
+</PC-12> 
+ 

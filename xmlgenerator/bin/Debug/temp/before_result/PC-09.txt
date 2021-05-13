@@ -1,0 +1,12 @@
+<PC-09> 
+<NAME>백신 설치 여부</NAME> 
+<DATA> <![CDATA[   
+"---- 설치된 백신 ----" 
+Windows Defender
+]]> </DATA> 
+<RESULT_COMMENT> 
+[양호] 백신 사용 중 이므로 양호함
+</RESULT_COMMENT> 
+<RESULT>Y</RESULT> 
+</PC-09> 
+ 

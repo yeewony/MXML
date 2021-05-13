@@ -1,0 +1,28 @@
+<PC-05> 
+<NAME>최신 보안 업데이트 여부</NAME> 
+<DATA> <![CDATA[   
+OS Name:                   Microsoft Windows 10 Pro
+"#wmic QFE Get HotFixID,InstalledOn" 
+ 
+HotFixID   InstalledOn  
+KB4601554  3/16/2021    
+KB4534170  4/20/2020    
+KB4537759  4/20/2020    
+KB4542335  9/3/2020     
+KB4545706  4/20/2020    
+KB4562830  1/6/2021     
+KB4570334  9/2/2020     
+KB4577586  2/23/2021    
+KB4580325  12/31/2020   
+KB4589212  3/16/2021    
+KB4593175  1/6/2021     
+KB4598481  1/15/2021    
+KB5001330  4/29/2021    
+KB5001405  4/20/2021    
+]]> </DATA> 
+<RESULT_COMMENT> 
+[양호] 최신 보안 업데이트가 적용되어 있으므로 양호함
+</RESULT_COMMENT> 
+<RESULT>Y</RESULT> 
+</PC-05> 
+ 

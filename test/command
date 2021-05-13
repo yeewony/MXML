@@ -1,0 +1,4 @@
+﻿write-host "이것이 보이면 테스트 성공"
+write-host "이것만 보이면 테스트 성공"
+
+get-content command

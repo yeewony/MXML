@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<PC-Check> 
+<START_TIME>2021-05-11 13:59:18.00</START_TIME> 
+ 
+<HOSTNAME>DESKTOP-27SD48E</HOSTNAME> 
+ 
+<IPCONFIG> <![CDATA[ 
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-27SD48E
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) Wi-Fi 6 AX201 160MHz
+   Physical Address. . . . . . . . . : B0-A4-60-B7-C1-04
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::8bf:47d6:5843:7a37%15(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.0.130(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 2021년 5월 11일 화요일 오전 10:48:35
+   Lease Expires . . . . . . . . . . : 2021년 5월 11일 화요일 오후 3:48:36
+   Default Gateway . . . . . . . . . : 192.168.0.1
+   DHCP Server . . . . . . . . . . . : 192.168.0.1
+   DHCPv6 IAID . . . . . . . . . . . : 145794144
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-27-57-A2-71-B4-A9-FC-DF-37-F0
+   DNS Servers . . . . . . . . . . . : 168.126.63.1
+                                       168.126.63.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Wireless LAN adapter 로컬 영역 연결* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Physical Address. . . . . . . . . : B0-A4-60-B7-C1-05
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter 로컬 영역 연결* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Physical Address. . . . . . . . . : B2-A4-60-B7-C1-04
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter 이더넷 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Win32 Adapter V9
+   Physical Address. . . . . . . . . : CA-FE-FC-DF-37-F0
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Tunnel adapter isatap.{A9FAE2F9-C3F1-4A70-BA1D-B894136015BB}:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft ISATAP Adapter
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::5efe:192.168.0.130%41(Preferred) 
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 687865856
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-27-57-A2-71-B4-A9-FC-DF-37-F0
+   DNS Servers . . . . . . . . . . . : 168.126.63.1
+                                       168.126.63.2
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+Tunnel adapter 6to4 Adapter:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft 6to4 Adapter
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+]]> </IPCONFIG> 
+ 
+<OS> <![CDATA[ 
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.19042 N/A Build 19042
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+]]> </OS> 
+<OS_NAME> 
+                   Microsoft Windows 10 Pro 
+</OS_NAME> 
+<OS_VERSION> 
+10.0.19042.928 
+</OS_VERSION> 
+ 
+<systeminfo> <![CDATA[ 
+
+Host Name:                 DESKTOP-27SD48E
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.19042 N/A Build 19042
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          root
+Registered Organization:   
+Product ID:                00330-53244-86797-AAOEM
+Original Install Date:     2020-12-24, ?? 8:00:03
+System Boot Time:          2021-05-10, ?? 3:22:55
+System Manufacturer:       LG Electronics
+System Model:              15U50N-GP50ML
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 142 Stepping 12 GenuineIntel ~1609 Mhz
+BIOS Version:              Insyde GP142, 2020-11-03
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             ko;Korean
+Input Locale:              ko;Korean
+Time Zone:                 (UTC+09:00) Seoul
+Total Physical Memory:     8,061 MB
+Available Physical Memory: 2,903 MB
+Virtual Memory: Max Size:  16,765 MB
+Virtual Memory: Available: 10,767 MB
+Virtual Memory: In Use:    5,998 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-27SD48E
+Hotfix(s):                 14 Hotfix(s) Installed.
+                           [01]: KB4601554
+                           [02]: KB4534170
+                           [03]: KB4537759
+                           [04]: KB4542335
+                           [05]: KB4545706
+                           [06]: KB4562830
+                           [07]: KB4570334
+                           [08]: KB4577586
+                           [09]: KB4580325
+                           [10]: KB4589212
+                           [11]: KB4593175
+                           [12]: KB4598481
+                           [13]: KB5001330
+                           [14]: KB5001405
+Network Card(s):           3 NIC(s) Installed.
+                           [01]: Realtek PCIe GbE Family Controller
+                                 Connection Name: ???
+                                 Status:          Hardware not present
+                           [02]: Intel(R) Wi-Fi 6 AX201 160MHz
+                                 Connection Name: Wi-Fi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.0.1
+                                 IP address(es)
+                                 [01]: 192.168.0.130
+                                 [02]: fe80::8bf:47d6:5843:7a37
+                           [03]: TAP-Win32 Adapter V9
+                                 Connection Name: ??? 2
+                                 Status:          Media disconnected
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+]]> </systeminfo> 
+ 
+ 
+<netstart> <![CDATA[ 
+These Windows services are started:
+
+   Application Information
+   AppX Deployment Service (AppXSVC)
+   AVCTP 서비스
+   Background Tasks Infrastructure Service
+   Base Filtering Engine
+   Bluetooth 사용자 지원 서비스_e1d9699
+   Bluetooth 오디오 게이트웨이 서비스
+   Bluetooth 지원 서비스
+   Certificate Propagation
+   CNG Key Isolation
+   COM+ Event System
+   Connected User Experiences and Telemetry
+   CoreMessaging
+   Credential Manager
+   Cryptographic Services
+   Data Sharing Service
+   DCOM Server Process Launcher
+   Device Association Service
+   Device Install Service
+   DHCP Client
+   Diagnostic Policy Service
+   Diagnostic Service Host
+   Diagnostic System Host
+   Distributed Link Tracking Client
+   DNS Client
+   DtsApo4Service
+   Encrypting File System (EFS)
+   File Virtualization Manager Service
+   Gaming Services
+   Gaming Services
+   Geolocation Service
+   IKE and AuthIP IPsec Keying Modules
+   Intel(R) Content Protection HDCP Service
+   Intel(R) Content Protection HECI Service
+   Intel(R) Dynamic Application Loader Host Interface Service
+   Intel(R) Dynamic Tuning service
+   Intel(R) Graphics Command Center Service
+   Intel(R) HD Graphics Control Panel Service
+   Intel(R) Management and Security Application Local Management Service
+   Intel(R) Storage Middleware Service
+   IP Helper
+   LG Device Managers
+   LG Time Manager
+   LG UWP Service
+   LGControlCenterSVC
+   Local Session Manager
+   Microsoft Defender Antivirus Network Inspection Service
+   Microsoft Defender Antivirus Service
+   Microsoft Passport
+   Microsoft Passport Container
+   Microsoft Store 설치 서비스
+   Network Connection Broker
+   Network List Service
+   Network Location Awareness
+   Network Store Interface Service
+   PlatformMgrService
+   Plug and Play
+   Power
+   Print Spooler
+   Program Compatibility Assistant Service
+   Realtek Audio Universal Service
+   Remote Access Connection Manager
+   Remote Desktop Configuration
+   Remote Desktop Services
+   Remote Desktop Services UserMode Port Redirector
+   Remote Procedure Call (RPC)
+   RPC Endpoint Mapper
+   Secure Socket Tunneling Protocol Service
+   Security Accounts Manager
+   Security Center
+   Server
+   Shell Hardware Detection
+   SSDP Discovery
+   State Repository Service
+   Storage Service
+   SysMain
+   System Event Notification Service
+   System Events Broker
+   System Guard 런타임 모니터 브로커
+   Task Scheduler
+   TCP/IP NetBIOS Helper
+   Themes
+   Time Broker
+   Touch Keyboard and Handwriting Panel Service
+   User Manager
+   User Profile Service
+   Windows Audio
+   Windows Audio Endpoint Builder
+   Windows Connection Manager
+   Windows Defender Firewall
+   Windows Event Log
+   Windows Font Cache Service
+   Windows Image Acquisition (WIA)
+   Windows Management Instrumentation
+   Windows Modules Installer
+   Windows Presentation Foundation Font Cache 3.0.0.0
+   Windows Push Notifications User Service_e1d9699
+   Windows Search
+   Windows 라이선스 관리자 서비스
+   Windows 보안 서비스
+   Windows 푸시 알림 시스템 서비스
+   WinHTTP Web Proxy Auto-Discovery Service
+   WLAN AutoConfig
+   Workstation
+   Ww Client Agent
+   결제 및 NFC/SE 관리자
+   기능 액세스 관리자 서비스
+   데이터 사용량
+   디스플레이 개선 서비스
+   무선 송수신 장치 관리 서비스
+   연결된 디바이스 플랫폼 사용자 서비스_e1d9699
+   연결된 디바이스 플랫폼 서비스
+   오케스트레이터 서비스 업데이트
+   웹 계정 관리자
+   정책 서비스 표시
+   클립보드 사용자 서비스_e1d9699
+   호스트 동기화_e1d9699
+
+The command completed successfully.
+
+]]> </netstart> 
+ 

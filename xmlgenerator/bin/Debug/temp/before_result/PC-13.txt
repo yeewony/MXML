@@ -1,0 +1,14 @@
+<PC-13> 
+<NAME>이동식 미디어 자동실행 방지</NAME> 
+<DATA> <![CDATA[   
+ 
+# reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" | findstr "DisableAutoplay" 
+    DisableAutoplay    REG_DWORD    0x0
+ 
+]]> </DATA> 
+<RESULT_COMMENT> 
+[취약] 이동식 미디어가 자동실행되므로 취약함 
+</RESULT_COMMENT> 
+<RESULT>N</RESULT> 
+</PC-13> 
+ 
