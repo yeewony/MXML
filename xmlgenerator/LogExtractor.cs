@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.IO.Compression;
 using System.IO;
+using System.Xml;
 
 namespace xmlgenerator
 {
@@ -44,6 +45,7 @@ namespace xmlgenerator
             TxtfiletoXML();
 
             //4.이름 변경을 위한 hostname 뽑아내서 이름 변경하기
+            NameChange();
 
             //5.virus log 분석해서 virus result로 뽑아내기
 
@@ -123,6 +125,49 @@ namespace xmlgenerator
             else
             {
                 System.Windows.MessageBox.Show("XML로 변환 할 텍스트 파일을 찾지 못하였습니다.");
+            }
+        }
+
+        private static void NameChange()
+        {
+            try
+            {
+                string xmlfile = Environment.CurrentDirectory + "\\Result_before.xml";
+                string hostname = null;
+
+                XmlDocument xdc = new XmlDocument();
+                xdc.Load(xmlfile);
+
+                XmlNodeList xmlNodes = xdc.SelectNodes("PC-Check");
+
+                foreach (XmlNode nodes in xmlNodes)
+                {
+                    XmlElement element = (XmlElement)nodes;
+
+                    hostname = Convert.ToString(nodes["HOSTNAME"].InnerText);
+                }
+
+                try
+                {
+                    if (File.Exists(Environment.CurrentDirectory + "\\Result_Before.xml"))
+                    {
+                        if (File.Exists(Environment.CurrentDirectory + "\\Result_After.xml"))
+                        {
+                            File.Move(Environment.CurrentDirectory + "\\Result_Before.xml", Environment.CurrentDirectory + "\\" + hostname + "_Result_Before.xml");
+                            File.Move(Environment.CurrentDirectory + "\\Result_After.xml", Environment.CurrentDirectory + "\\" + hostname + "_Result_After.xml");
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show(ex.ToString());
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.ToString());
             }
         }
     }
