@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO.Compression;
 using System.IO;
 using System.Xml;
+using System.Resources;
 
 namespace xmlgenerator
 {
@@ -48,6 +49,7 @@ namespace xmlgenerator
             NameChange();
 
             //5.virus log 분석해서 virus result로 뽑아내기
+            ViruslogToResult();
 
             //6. 3개를 하나로 묶기, 리포트 생성?
 
@@ -169,6 +171,27 @@ namespace xmlgenerator
             {
                 System.Windows.MessageBox.Show(ex.ToString());
             }
+        }
+
+        private static void ViruslogToResult()
+        {
+            //각 라인 끝에 특수한 문자를 붙이고 서브스트링을 통해 해당 문자열 앞 라인 하나와 뒷라인 하나를 걸러낸다.
+            string logpath = Environment.CurrentDirectory + "\\temp\\Virus_Log.txt";
+            string resultpath = Environment.CurrentDirectory + "\\Virus_Result.txt";
+
+            ResourceManager RM = new ResourceManager("items", System.Reflection.Assembly.GetExecutingAssembly());
+
+            var AlllogLines = File.ReadAllLines(logpath).Count();
+            var dellines = AlllogLines - 13;
+
+
+            List<string> linesList = File.ReadAllLines(logpath).ToList();
+
+            linesList.RemoveRange(0, dellines);
+
+            File.WriteAllLines(resultpath, linesList.ToArray());
+
+            File.AppendAllText(resultpath, RM.GetString("VirusResultsTail"));
         }
     }
 }
