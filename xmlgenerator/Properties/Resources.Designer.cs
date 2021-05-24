@@ -22,7 +22,7 @@ namespace xmlgenerator.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace xmlgenerator.Properties {
         ///   이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("xmlgenerator.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace xmlgenerator.Properties {
         ///   재정의합니다.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,7 +61,8 @@ namespace xmlgenerator.Properties {
         }
         
         /// <summary>
-        ///   ===============================================================================
+        ///   
+        ///===============================================================================
         ///◎ 루트킷 프로세스 및 파일 점검 결과 : 양호
         ///
         ///◎ 실행중인 프로세스, 커맨드 라인, 메모리 점검 및 주요 레지스트리 점검 결과 : 양호
@@ -73,9 +74,9 @@ namespace xmlgenerator.Properties {
         ///◎ 시스템 주요 폴더 및 특정 폴더 악성코드 점검 결과 : 양호
         ///===============================================================================과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static string VirusResultsTail {
+        internal static string logtoresultTail {
             get {
-                return ResourceManager.GetString("VirusResultsTail", resourceCulture);
+                return ResourceManager.GetString("logtoresultTail", resourceCulture);
             }
         }
     }

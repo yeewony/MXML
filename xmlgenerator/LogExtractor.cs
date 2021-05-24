@@ -52,6 +52,8 @@ namespace xmlgenerator
             ViruslogToResult();
 
             //6. 3개를 하나로 묶기, 리포트 생성?
+            ArchiveAndClear();
+            
 
         }
 
@@ -177,9 +179,10 @@ namespace xmlgenerator
         {
             //각 라인 끝에 특수한 문자를 붙이고 서브스트링을 통해 해당 문자열 앞 라인 하나와 뒷라인 하나를 걸러낸다.
             string logpath = Environment.CurrentDirectory + "\\temp\\Virus_Log.txt";
-            string resultpath = Environment.CurrentDirectory + "\\Virus_Result.txt";
+            string resultpath = Environment.CurrentDirectory + "\\Virus_Result_Check.txt";
 
-            ResourceManager RM = new ResourceManager("items", System.Reflection.Assembly.GetExecutingAssembly());
+
+            ResourceManager RM = new ResourceManager("Resources", System.Reflection.Assembly.GetExecutingAssembly());
 
             var AlllogLines = File.ReadAllLines(logpath).Count();
             var dellines = AlllogLines - 13;
@@ -191,7 +194,53 @@ namespace xmlgenerator
 
             File.WriteAllLines(resultpath, linesList.ToArray());
 
-            File.AppendAllText(resultpath, RM.GetString("VirusResultsTail"));
+            string tail = Properties.Resources.logtoresultTail;
+
+            File.AppendAllText(resultpath, tail);
+        }
+
+        private static void ArchiveAndClear()
+        {
+            string pwd = Environment.CurrentDirectory;
+
+            string[] xmlfiles = Directory.GetFiles(pwd, "*.xml");
+            string[] txtfiles = Directory.GetFiles(pwd, "*.txt");
+
+            string zippath = pwd + "\\점검결과_END_TIME.zip";
+
+            using (ZipArchive zip = ZipFile.Open(zippath,ZipArchiveMode.Create))
+            {
+                List<string> files = new List<string>();
+                files.Add(xmlfiles[0]);
+                files.Add(xmlfiles[1]);
+                files.Add(pwd + "\\Virus_Result_Check.txt");
+
+                foreach (var file in files)
+                {
+                    zip.CreateEntryFromFile(file, Path.GetFileName(file));
+                }
+            }
+
+            if (xmlfiles != null)
+            {
+                foreach (var xmlfile in xmlfiles)
+                {
+                    File.Delete(xmlfile);
+                }
+            }
+            if (txtfiles != null)
+            {
+                foreach (var txtfile in txtfiles)
+                {
+                    File.Delete(txtfile);
+                }
+
+            }
+            if (Directory.Exists(pwd+"\\temp"))
+            {
+                Directory.Delete(pwd + "\\temp",true);
+
+            }
         }
     }
 }

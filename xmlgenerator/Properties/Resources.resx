@@ -117,8 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="VirusResultsTail" xml:space="preserve">
-    <value>===============================================================================
+  <data name="logtoresultTail" xml:space="preserve">
+    <value>
+===============================================================================
 ◎ 루트킷 프로세스 및 파일 점검 결과 : 양호
 
 ◎ 실행중인 프로세스, 커맨드 라인, 메모리 점검 및 주요 레지스트리 점검 결과 : 양호
@@ -129,6 +130,6 @@
 
 ◎ 시스템 주요 폴더 및 특정 폴더 악성코드 점검 결과 : 양호
 ===============================================================================</value>
-    <comment>바이러스 결과 텍스트파일 생성 할 때 뒤에 붙임</comment>
+    <comment>마지막부분</comment>
   </data>
 </root>
