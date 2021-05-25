@@ -1,0 +1,15 @@
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.csprojAssemblyReference.cache
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\MainWindow.g.cs
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\App.g.cs
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator_MarkupCompile.cache
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator_MarkupCompile.lref
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\bin\Debug\xmlgenerator.exe.config
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\bin\Debug\xmlgenerator.exe
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\bin\Debug\xmlgenerator.pdb
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\MainWindow.baml
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.g.resources
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.Properties.Resources.resources
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.csproj.GenerateResource.cache
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.csproj.CoreCompileInputs.cache
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.exe
+C:\Users\11217\Desktop\PCCARE\xmlgenerator\obj\Debug\xmlgenerator.pdb
