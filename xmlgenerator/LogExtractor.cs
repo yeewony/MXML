@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 using System.IO.Compression;
 using System.IO;
 using System.Xml;
-using System.Resources;
 
 namespace xmlgenerator
 {
@@ -181,8 +178,6 @@ namespace xmlgenerator
             string logpath = Environment.CurrentDirectory + "\\temp\\Virus_Log.txt";
             string resultpath = Environment.CurrentDirectory + "\\Virus_Result_Check.txt";
 
-
-            ResourceManager RM = new ResourceManager("Resources", System.Reflection.Assembly.GetExecutingAssembly());
 
             var AlllogLines = File.ReadAllLines(logpath).Count();
             var dellines = AlllogLines - 13;
