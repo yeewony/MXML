@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:blendingMXML2"
         mc:Ignorable="d"
-        Title="MXML 2" Height="494.993" Width="921.005" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF1F1F1F">
+        Title="MXML 2" Height="575.943" Width="1105.505" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF36393F">
 
     <Window.Resources>
         <Style x:Key ="ToggleRadius" TargetType="ToggleButton">
-            <Setter Property="Background" Value="#ff6347"/>
+            <Setter Property="Background" Value="#ED4245"/>
             <Setter Property="Foreground" Value="#f7f7f7"/>
             <Setter Property="Content" Value="취약"/>
             <Setter Property="Template">
@@ -24,10 +24,24 @@
             <Style.Triggers>
                 <Trigger Property="IsChecked" Value="True">
                     <Setter Property="Content" Value="양호"/>
-                    <Setter Property="Background" Value="#39a1ff"/>
+                    <Setter Property="Background" Value="#3BA55C"/>
                     <Setter Property="Foreground" Value="#f7f7f7"/>
                 </Trigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ButtonRadius" TargetType="Button">
+            <Setter Property="Background" Value="#4c98ff" />
+            <Setter Property="Foreground" Value="#f7f7f7" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
 
@@ -36,28 +50,29 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="558.993"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="496.943"/>
         </Grid.RowDefinitions>
-        <GroupBox x:Name="Grpbox_ClipboardInput" Header="모바일 정보 입력" Height="118.511" Margin="10,10,0,0" Width="304.596" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" BorderThickness="0" Background="#FF333333">
-            <TextBox TextWrapping="Wrap" BorderThickness="0" Background="#FF131313" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" SelectionBrush="#FFF1CBCB"/>
+        <GroupBox x:Name="Grpbox_ClipboardInput" Header="모바일 정보 입력" Height="169.511" Margin="17,20,0,0" Width="387.096" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" BorderThickness="0" Background="#FF2F3136" FontSize="14" Grid.Row="1">
+            <TextBox TextWrapping="Wrap" BorderThickness="0" Background="#FF202225" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" SelectionBrush="#FFF1CBCB"/>
         </GroupBox>
-        <GroupBox Header="모바일 점검 정보" HorizontalAlignment="Left" Margin="10,151.511,0,152.482" Width="304.596" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" BorderThickness="0" Background="#FF333333">
+        <GroupBox Header="모바일 점검 정보" HorizontalAlignment="Left" Margin="17,0,0,39" Width="387.096" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" BorderThickness="0" Background="#FF2F3136" FontSize="14" Grid.Row="1" Height="249.45" VerticalAlignment="Bottom">
             <Grid>
-                <Label Content="시작 시간" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Height="30" VerticalContentAlignment="Center" Width="65" HorizontalContentAlignment="Center"/>
-                <Label Content="종료 시간" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="65" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="시작 시간" VerticalAlignment="Top" Width="200" Margin="80,10,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF131313" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="종료 시간" VerticalAlignment="Top" Width="200" Margin="80,45,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF131313" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <Label Content="OS 버전" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="65" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="OS 버전" VerticalAlignment="Top" Width="200" Margin="80,80,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF131313" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <Label Content="모 델 명" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="65" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="모델명" VerticalAlignment="Top" Width="200" Margin="80,115,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF131313" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <Label Content="제 조 사" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="65" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="제조사" VerticalAlignment="Top" Width="200" Margin="80,150,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF131313" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <Label Content="통 신 사" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="65" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="통신사" VerticalAlignment="Top" Width="200" Margin="80,185,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF131313" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <Label Content="시작 시간" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Height="30" VerticalContentAlignment="Center" Width="80" HorizontalContentAlignment="Center"/>
+                <Label Content="종료 시간" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="OS 버전" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="모 델 명" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="제 조 사" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="통 신 사" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_StartTime" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="시작 시간" VerticalAlignment="Top" Width="250" Margin="100,10,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_EndTime" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="종료 시간" VerticalAlignment="Top" Width="250" Margin="100,45,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_OSVer" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="OS 버전" VerticalAlignment="Top" Width="250" Margin="100,80,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_ModelName" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="모델명" VerticalAlignment="Top" Width="250" Margin="100,115,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_Manufacturer" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="제조사" VerticalAlignment="Top" Width="250" Margin="100,150,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="통신사" VerticalAlignment="Top" Width="250" Margin="100,185,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="점검 결과 입력" HorizontalAlignment="Left" Height="396.511" Margin="337,10,0,0" VerticalAlignment="Top" Width="412" Background="#FF333333" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFF7F7F7">
+        <GroupBox Header="점검 결과 입력" HorizontalAlignment="Left" Height="437.943" Margin="420.5,20,0,0" VerticalAlignment="Top" Width="430" Background="#FF2F3136" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" FontSize="14" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="24*"/>
@@ -70,13 +85,39 @@
                     <RowDefinition Height="51*"/>
                     <RowDefinition Height="7*"/>
                 </Grid.RowDefinitions>
-                <Rectangle Grid.Row="1" Fill="#FF1F1F1F" RadiusX="10" RadiusY="10" Margin="0,5.001,0,4.1" HorizontalAlignment="Left" Width="400"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="254.75,10,0,10" Grid.Row="1" Width="45" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <Label Content="⁕ 스마트폰 잠금설정" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.Row="1" Foreground="#FFF7F7F7"/>
-                <Label Content="점검 전" HorizontalAlignment="Left" Margin="254.75,0,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" FontSize="11" Width="45" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="329.75,10,0,10" Grid.Row="1" Width="45" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True"/>
-                <Label Content="점검 후" HorizontalAlignment="Left" Margin="329.75,0,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" FontSize="11" Width="45" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="점검 전" HorizontalAlignment="Left" Margin="267.25,-0.456,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="52"/>
+                <Label Content="점검 후" HorizontalAlignment="Left" Margin="340.75,0,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" FontSize="12" Width="52" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Rectangle Grid.Row="1" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="01. 스마트폰 잠금설정" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="1" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="1" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="1" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <Rectangle Grid.Row="2" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="02. 구글 Play 프로텍트 인증" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="2" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="2" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="2" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <Rectangle Grid.Row="3" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="03. 최신 보안 업데이트" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="3" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="3" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="3" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <Rectangle Grid.Row="4" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="04. 개발자 옵션 활성화" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="4" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="4" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="4" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <Rectangle Grid.Row="5" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="05. 애플리케이션 권한 관리" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="5" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="5" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="5" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <Rectangle Grid.Row="6" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="06. 백신 설치" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="6" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="6" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="6" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <Rectangle Grid.Row="7" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
+                <Label Content="07. 백신 최신 업데이트, 실시간 감시" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="7" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="7" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="7" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
             </Grid>
         </GroupBox>
+        <Rectangle Fill="#FF202225" Height="50" VerticalAlignment="Top"/>
+        <Button Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="210.904" Height="75" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="867.601,31.996,0,0" FontSize="24"/>
     </Grid>
 </Window>
