@@ -1,11 +1,11 @@
-﻿<Window x:Class="blendingMXML2.MainWindow"
+﻿<Window x:Name="MXML2_Window" x:Class="MXML2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:blendingMXML2"
+        xmlns:local="clr-namespace:MXML2"
         mc:Ignorable="d"
-        Title="MXML 2" Height="575.943" Width="1051.505" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF36393F">
+        Title="MXML 2" Height="575.943" Width="1051.505" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF36393F" Loaded="DetectColorMode">
 
     <Window.Resources>
         <Style x:Key ="ToggleRadius" TargetType="ToggleButton">
@@ -127,9 +127,9 @@
             </Grid>
         </GroupBox>
         <Rectangle Fill="#FF202225" Height="50" VerticalAlignment="Top"/>
-        <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF7CB4E6" BorderBrush="{x:Null}" Margin="868,36.5,0,385.5" FontSize="22"/>
-        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF4C98FF" BorderBrush="{x:Null}" Margin="868,136.5,0,285.5" FontSize="22"/>
-        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="868,236.5,0,185.5" FontSize="22"/>
+        <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF7CB4E6" BorderBrush="{x:Null}" Margin="868,36.5,0,385.5" FontSize="22" Click="START_Inspection"/>
+        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF4C98FF" BorderBrush="{x:Null}" Margin="868,136.5,0,285.5" FontSize="22" Click="END_Inspection"/>
+        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="868,236.5,0,185.5" FontSize="22" Click="GenerateXML"/>
         <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="868,336.5,0,85.5" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False"/>
         <Label Content="모바일 보고서 작성기" HorizontalAlignment="Left" Margin="10,4,0,4" FontSize="24" Foreground="#FFF7F7F7" FontFamily="Segoe UI" FontWeight="Bold"/>
         <Label Content="ⓒDinner.At.Home" HorizontalAlignment="Left" Margin="892.34,429.323,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#FF131313" FontWeight="Bold" FontSize="14"/>
