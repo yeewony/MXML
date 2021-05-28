@@ -31,18 +31,27 @@
         </Style>
 
         <Style x:Key="ButtonRadius" TargetType="Button">
-            <Setter Property="Background" Value="#4c98ff" />
+            <Setter Property="Background" Value="#006bcb" />
             <Setter Property="Foreground" Value="#f7f7f7" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="8" Background="{TemplateBinding Background}" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border x:Name="border" CornerRadius="8" Background="{TemplateBinding Background}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#4c98ff"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="#5e5e5e"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
 
     <Grid>
@@ -54,7 +63,7 @@
             <RowDefinition Height="496.943"/>
         </Grid.RowDefinitions>
         <GroupBox x:Name="Grpbox_ClipboardInput" Header="모바일 정보 입력" Height="169.511" Margin="17,20,0,0" Width="387.096" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" BorderThickness="0" Background="#FF2F3136" FontSize="14" Grid.Row="1">
-            <TextBox TextWrapping="Wrap" BorderThickness="0" Background="#FF202225" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" SelectionBrush="#FFF1CBCB"/>
+            <TextBox x:Name="tb_InputClipData" TextWrapping="Wrap" BorderThickness="0" Background="#FF202225" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" SelectionBrush="#FFF1CBCB"/>
         </GroupBox>
         <GroupBox Header="모바일 점검 정보" HorizontalAlignment="Left" Margin="17,0,0,39" Width="387.096" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" BorderThickness="0" Background="#FF2F3136" FontSize="14" Grid.Row="1" Height="249.45" VerticalAlignment="Bottom">
             <Grid>
@@ -64,12 +73,12 @@
                 <Label Content="모 델 명" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label Content="제 조 사" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label Content="통 신 사" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="tb_StartTime" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="시작 시간" VerticalAlignment="Top" Width="250" Margin="100,10,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="tb_EndTime" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="종료 시간" VerticalAlignment="Top" Width="250" Margin="100,45,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="tb_OSVer" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="OS 버전" VerticalAlignment="Top" Width="250" Margin="100,80,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="tb_ModelName" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="모델명" VerticalAlignment="Top" Width="250" Margin="100,115,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="tb_Manufacturer" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="제조사" VerticalAlignment="Top" Width="250" Margin="100,150,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="통신사" VerticalAlignment="Top" Width="250" Margin="100,185,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_StartTime" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="100,10,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_EndTime" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="100,45,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_OSVer" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="100,80,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_ModelName" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="100,115,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_Manufacturer" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="100,150,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="tb_Carrier" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="100,185,0,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="점검 결과 입력" HorizontalAlignment="Left" Height="437.943" Margin="420.5,20,0,0" VerticalAlignment="Top" Width="430" Background="#FF2F3136" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" FontSize="14" Grid.Row="1">
@@ -89,35 +98,39 @@
                 <Label Content="점검 후" HorizontalAlignment="Left" Margin="340.75,0,0,0" VerticalAlignment="Top" Foreground="#FFF7F7F7" FontSize="12" Width="52" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Rectangle Grid.Row="1" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="01. 스마트폰 잠금설정" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="1" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="1" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="1" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_01_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="1" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_01_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="1" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
                 <Rectangle Grid.Row="2" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="02. 구글 Play 프로텍트 인증" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="2" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="2" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="2" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_02_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="2" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_02_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="2" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
                 <Rectangle Grid.Row="3" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="03. 최신 보안 업데이트" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="3" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="3" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="3" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_03_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="3" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_03_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="3" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
                 <Rectangle Grid.Row="4" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="04. 개발자 옵션 활성화" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="4" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="4" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="4" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_04_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="4" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_04_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="4" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
                 <Rectangle Grid.Row="5" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="05. 애플리케이션 권한 관리" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="5" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="5" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="5" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_05_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="5" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_05_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="5" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
                 <Rectangle Grid.Row="6" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="06. 백신 설치" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="6" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="6" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="6" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_06_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="6" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_06_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="6" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
                 <Rectangle Grid.Row="7" Fill="#FF202225" RadiusX="10" RadiusY="10" Margin="11,5,0,5" HorizontalAlignment="Left" Width="400"/>
                 <Label Content="07. 백신 최신 업데이트, 실시간 감시" HorizontalAlignment="Left" Margin="21,10,0,10" Grid.Row="7" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="7" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
-                <ToggleButton Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="7" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_07_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="267.25,12.548,0,12.548" Grid.Row="7" Width="52" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold"/>
+                <ToggleButton x:Name="tgbtn_07_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="340.75,12.548,0,12.548" Grid.Row="7" Width="52" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold"/>
             </Grid>
         </GroupBox>
         <Rectangle Fill="#FF202225" Height="50" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="210.904" Height="75" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="867.601,31.996,0,0" FontSize="24"/>
+        <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="211" Background="#FF7CB4E6" BorderBrush="{x:Null}" Margin="868,32,0,390" FontSize="24"/>
+        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="211" Background="#FF4C98FF" BorderBrush="{x:Null}" Margin="868,132,0,290" FontSize="24"/>
+        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="211" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="868,232,0,190" FontSize="24"/>
+        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="211" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="868,332,0,90" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False"/>
+        <Label Content="모바일 보고서 작성기" HorizontalAlignment="Left" Margin="10,4,0,4" FontSize="24" Foreground="#FFF7F7F7" FontFamily="Segoe UI" FontWeight="Bold"/>
     </Grid>
 </Window>
