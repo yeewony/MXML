@@ -1,0 +1,50 @@
+<MOBILE-Check>
+  <START_TIME>2021-05-29 09:18:35</START_TIME>
+  <END_TIME>2021-05-29 09:18:34</END_TIME>
+  <ANDROID_VERSION>9</ANDROID_VERSION>
+  <MODEL_VERSION>867</MODEL_VERSION>
+  <MANUFACTURER>55555555</MANUFACTURER>
+  <CARRIER>55555555555</CARRIER>
+  <MO-01>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-01>
+  <MO-02>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-02>
+  <MO-03>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-03>
+  <MO-04>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-04>
+  <MO-05>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-05>
+  <MO-06>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-06>
+  <MO-07>
+    <NAME>
+    </NAME>
+    <RESULT>
+    </RESULT>
+  </MO-07>
+</MOBILE-Check>

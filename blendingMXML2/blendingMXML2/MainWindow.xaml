@@ -52,6 +52,25 @@
             </Setter>
         </Style>
 
+        <Style x:Key="ButtonReset" TargetType="Button">
+            <Setter Property="Background" Value="#fb8900"/>
+            <Setter Property="Foreground" Value="#f7f7f7"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FA4A0C"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
 
     <Grid>
@@ -128,10 +147,11 @@
         </GroupBox>
         <Rectangle Fill="#FF202225" Height="50" VerticalAlignment="Top"/>
         <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF7CB4E6" BorderBrush="{x:Null}" Margin="868,36.5,0,385.5" FontSize="22"/>
-        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF4C98FF" BorderBrush="{x:Null}" Margin="868,136.5,0,285.5" FontSize="22"/>
-        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="868,236.5,0,185.5" FontSize="22"/>
-        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="868,336.5,0,85.5" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False"/>
+        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF4C98FF" BorderBrush="{x:Null}" Margin="868,130.5,0,291.5" FontSize="22"/>
+        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="868,225.172,0,196.828" FontSize="22"/>
+        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="150" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="868,323.174,0,98.826" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False"/>
         <Label Content="모바일 보고서 작성기" HorizontalAlignment="Left" Margin="10,4,0,4" FontSize="24" Foreground="#FFF7F7F7" FontFamily="Segoe UI" FontWeight="Bold"/>
-        <Label Content="ⓒDinner.At.Home" HorizontalAlignment="Left" Margin="892.34,429.323,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#FF131313" FontWeight="Bold" FontSize="14"/>
+        <Label Content="ⓒDinner.At.Home" HorizontalAlignment="Left" Margin="616.34,448.323,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#FF131313" FontWeight="Bold" FontSize="14"/>
+        <Button Style="{StaticResource ButtonReset}" Content="초기화" HorizontalAlignment="Left" Margin="868,415.943,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1"/>
     </Grid>
 </Window>
