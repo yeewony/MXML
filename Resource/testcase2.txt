@@ -1,0 +1,19 @@
+전화번호    +821063792921 
+통신사    KT 
+모델 번호    SM-G986N 
+시리얼 번호    Not Available 
+네트워크 종류    MOBILE(LTE) 
+IP    192.0.0.2 
+로밍    false 
+안드로이드 버전    11(RP1A.200720.012.G986NKSU1DUD9) 
+OS 버전    4.19.113-21577069 
+프로세서    arm64-v8a 
+메모리 사용량    Total: 11.05GB, Free: 4.18GB 
+내부 저장소    Total: 243GB, Free: 57.46GB 
+SD 카드 저장소    Total: 31.90GB, Free: 26.98GB 
+해상도    Width : 1080, Height : 2400 
+언어    ko 
+IMEI(디바이스 ID)    Not Available 
+배터리    99% 
+제조사    samsung(Knox : 33)(OneUI : 3.1) 
+앱 버전    v10.21.03.31.1
