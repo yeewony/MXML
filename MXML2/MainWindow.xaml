@@ -15,7 +15,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -25,6 +25,10 @@
                     <Setter Property="Content" Value="양호"/>
                     <Setter Property="Background" Value="#3BA55C"/>
                     <Setter Property="Foreground" Value="#f7f7f7"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#474747"/>
+                    <Setter Property="Foreground" Value="#252525"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -50,7 +54,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style x:Key="ButtonReset" TargetType="Button">
             <Setter Property="Background" Value="#fb8900"/>
             <Setter Property="Foreground" Value="#f7f7f7"/>
@@ -82,9 +86,9 @@
         </Grid.RowDefinitions>
         <Rectangle Fill="#FF202225" Height="50" VerticalAlignment="Top"/>
         <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,20.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_START_Inspection" FontWeight="Bold"/>
-        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,95.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_END_Inspection" FontWeight="Bold"/>
-        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,170.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" FontWeight="Bold" Click="btn_GeneXML_Execution"/>
-        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="640.167,245.083,0,0" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False" Height="55" VerticalAlignment="Top" Foreground="#FFA7A7A7" FontWeight="Bold"/>
+        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,95.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_END_Inspection" FontWeight="Bold" IsEnabled="False"/>
+        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,170.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" FontWeight="Bold" Click="btn_GeneXML_Execution" IsEnabled="False"/>
+        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="640.167,245.083,0,0" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False" Height="55" VerticalAlignment="Top" Foreground="#FF6E6E6E" FontWeight="Bold"/>
         <Button x:Name="btn_Reset" Style="{StaticResource ButtonReset}" Content="초기화" HorizontalAlignment="Left" Margin="640.167,320.083,0,0" VerticalAlignment="Top" Width="120" Height="40" Grid.Row="1" Click="btn_Reset_ResetAll" FontWeight="Bold"/>
         <Label Content="모바일 보고서 작성기" HorizontalAlignment="Left" Margin="10,4,0,4" FontSize="24" Foreground="#FFF7F7F7" FontFamily="Segoe UI" FontWeight="Bold"/>
         <Rectangle Fill="#FF2F3136" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" RadiusY="10" Grid.Row="1" RadiusX="10" VerticalAlignment="Top" Width="300"/>
@@ -104,6 +108,7 @@
             <TextBox x:Name="tb_ModelName" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,296,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
             <TextBox x:Name="tb_Manufacturer" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,331,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
             <TextBox x:Name="tb_Carrier" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,363,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
+            <Label Content="모바일 정보를 여기에 붙여넣기 하세요" Margin="26,101,26,0" VerticalAlignment="Top" Foreground="#FF646464" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False"/>
         </Grid>
         <Rectangle Fill="#FF2F3136" HorizontalAlignment="Left" Height="400" Margin="320,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" RadiusX="10" RadiusY="10"/>
         <Grid HorizontalAlignment="Left" Height="400" Margin="320,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300">
@@ -141,7 +146,7 @@
             <Label Content="7. 백신 업데이트, 실시간 감시" HorizontalAlignment="Left" Margin="14.666,320,0,44.999" Foreground="#FFF7F7F7" Height="35" FontSize="11" VerticalContentAlignment="Center"/>
             <ToggleButton x:Name="tgbtn_07_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="180,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
             <ToggleButton x:Name="tgbtn_07_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="235,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
-            <Label Content="With Dinner.At.Home" HorizontalAlignment="Left" Margin="164.043,364.04,0,0" VerticalAlignment="Top" Foreground="#FF616161"/>
+            <Label Content="Dinner.At.Home" HorizontalAlignment="Left" Margin="194,364,0,0" VerticalAlignment="Top" Foreground="#FF616161"/>
         </Grid>
     </Grid>
 </Window>

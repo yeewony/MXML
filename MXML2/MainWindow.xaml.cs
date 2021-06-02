@@ -31,6 +31,22 @@ namespace MXML2
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            tgbtn_01_af.IsEnabled = false;
+            tgbtn_02_af.IsEnabled = false;
+            tgbtn_03_af.IsEnabled = false;
+            tgbtn_04_af.IsEnabled = false;
+            tgbtn_05_af.IsEnabled = false;
+            tgbtn_06_af.IsEnabled = false;
+            tgbtn_07_af.IsEnabled = false;
+
+            tgbtn_01_bf.IsEnabled = false;
+            tgbtn_02_bf.IsEnabled = false;
+            tgbtn_03_bf.IsEnabled = false;
+            tgbtn_04_bf.IsEnabled = false;
+            tgbtn_05_bf.IsEnabled = false;
+            tgbtn_06_bf.IsEnabled = false;
+            tgbtn_07_bf.IsEnabled = false;
+
             if (File.Exists("PinkyMXML2.exe"))
             {
                 MessageBox.Show("Cherry Blossom Activated");
@@ -41,7 +57,12 @@ namespace MXML2
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
         {
             ///모바일 점검 정보 리셋
-            tb_InputClipData.Text = null;
+
+            if (tb_StartTime.Text==string.Empty)
+            {
+                tb_InputClipData.Text = null;
+            }
+
             tb_StartTime.Text = null;
             tb_EndTime.Text = null;
             tb_OSVer.Text = null;
@@ -57,22 +78,45 @@ namespace MXML2
             tgbtn_05_bf.IsChecked = false;
             tgbtn_06_bf.IsChecked = false;
             tgbtn_07_bf.IsChecked = false;
+
+            btn_START.IsEnabled = true;
+            btn_END.IsEnabled = false;
+            btn_GeneXML.IsEnabled = false;
         }
 
         private void btn_START_Inspection(object sender, RoutedEventArgs e)
         {
             try
             {
-                MessageBox.Show("방해금지 모드를 설정하세요");
-
                 string clipdata = tb_InputClipData.Text;
                 List<string> DataList = new List<string>(clipdata.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries));
 
-                tb_StartTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 tb_OSVer.Text = DataList.Where(x => x.StartsWith("안드로이드 버전")).Select(x => x.Replace("안드로이드 버전", string.Empty)).ToArray()[0].Trim();
                 tb_ModelName.Text = DataList.Where(x => x.StartsWith("모델 번호")).Select(x => x.Replace("모델 번호", string.Empty)).ToArray()[0].Trim();
                 tb_Manufacturer.Text = DataList.Where(x => x.StartsWith("제조사")).Select(x => x.Replace("제조사", string.Empty)).ToArray()[0].Trim();
                 tb_Carrier.Text = DataList.Where(x => x.StartsWith("통신사")).Select(x => x.Replace("통신사", string.Empty)).ToArray()[0].Trim();
+
+                tb_StartTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                MessageBox.Show("방해금지 모드를 설정하세요");
+
+                tgbtn_01_af.IsEnabled = true;
+                tgbtn_02_af.IsEnabled = true;
+                tgbtn_03_af.IsEnabled = true;
+                tgbtn_04_af.IsEnabled = true;
+                tgbtn_05_af.IsEnabled = true;
+                tgbtn_06_af.IsEnabled = true;
+                tgbtn_07_af.IsEnabled = true;
+
+                tgbtn_01_bf.IsEnabled = true;
+                tgbtn_02_bf.IsEnabled = true;
+                tgbtn_03_bf.IsEnabled = true;
+                tgbtn_04_bf.IsEnabled = true;
+                tgbtn_05_bf.IsEnabled = true;
+                tgbtn_06_bf.IsEnabled = true;
+                tgbtn_07_bf.IsEnabled = true;
+
+                btn_END.IsEnabled = true;
             }
             catch (Exception)
             {
@@ -89,6 +133,8 @@ namespace MXML2
                 tb_EndTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                 MessageBox.Show("방해금지 모드를 해제하세요");
+
+                btn_GeneXML.IsEnabled = true;
             }
             catch (Exception ex)
             {
