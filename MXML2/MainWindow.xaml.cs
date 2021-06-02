@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace MXML2
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(Environment.CurrentDirectory+"\\Pinky_MXML2.exe"))
+            if (File.Exists("PinkyMXML2.exe"))
             {
                 MessageBox.Show("Cherry Blossom Activated");
                 
@@ -40,6 +41,7 @@ namespace MXML2
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
         {
             ///모바일 점검 정보 리셋
+            tb_InputClipData.Text = null;
             tb_StartTime.Text = null;
             tb_EndTime.Text = null;
             tb_OSVer.Text = null;
@@ -61,18 +63,20 @@ namespace MXML2
         {
             try
             {
+                MessageBox.Show("방해금지 모드를 설정하세요");
+
                 string clipdata = tb_InputClipData.Text;
-                List<string> InfoList = new List<string>(clipdata.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries));
+                List<string> DataList = new List<string>(clipdata.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries));
 
                 tb_StartTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                tb_OSVer.Text = InfoList.Where(x => x.StartsWith("안드로이드 버전")).Select(x => x.Replace("안드로이드 버전", string.Empty)).ToArray()[0].Trim();
-                tb_ModelName.Text = InfoList.Where(x => x.StartsWith("모델 번호")).Select(x => x.Replace("모델 번호", string.Empty)).ToArray()[0].Trim();
-                tb_Manufacturer.Text = InfoList.Where(x => x.StartsWith("제조사")).Select(x => x.Replace("제조사", string.Empty)).ToArray()[0].Trim();
-                tb_Carrier.Text = InfoList.Where(x => x.StartsWith("통신사")).Select(x => x.Replace("통신사", string.Empty)).ToArray()[0].Trim();
+                tb_OSVer.Text = DataList.Where(x => x.StartsWith("안드로이드 버전")).Select(x => x.Replace("안드로이드 버전", string.Empty)).ToArray()[0].Trim();
+                tb_ModelName.Text = DataList.Where(x => x.StartsWith("모델 번호")).Select(x => x.Replace("모델 번호", string.Empty)).ToArray()[0].Trim();
+                tb_Manufacturer.Text = DataList.Where(x => x.StartsWith("제조사")).Select(x => x.Replace("제조사", string.Empty)).ToArray()[0].Trim();
+                tb_Carrier.Text = DataList.Where(x => x.StartsWith("통신사")).Select(x => x.Replace("통신사", string.Empty)).ToArray()[0].Trim();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("점검 기기의 정보가 없거나 잘못된 정보입니다");
             }
             
 
@@ -84,18 +88,87 @@ namespace MXML2
             {
                 tb_EndTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                List<string> InfoList = new List<string>();
+                MessageBox.Show("방해금지 모드를 해제하세요");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
-                InfoList.Add(tb_StartTime.Text);
-                InfoList.Add(tb_EndTime.Text);
-                InfoList.Add(tb_OSVer.Text);
-                InfoList.Add(tb_ModelName.Text);
-                InfoList.Add(tb_Manufacturer.Text);
-                InfoList.Add(tb_Carrier.Text);
+        private void btn_GeneXML_Execution(object sender, RoutedEventArgs e)
+        {
+            try
+            {
 
-                MobileXML.GenerateXML(InfoList);
+                List<string> BeforeList = new List<string>();
+                List<string> AfterList = new List<string>();
 
-                
+                BeforeList.Add(tb_StartTime.Text);
+                BeforeList.Add(tb_EndTime.Text);
+                BeforeList.Add(tb_OSVer.Text);
+                BeforeList.Add(tb_ModelName.Text);
+                BeforeList.Add(tb_Manufacturer.Text);
+                BeforeList.Add(tb_Carrier.Text);
+
+                AfterList.Add(tb_StartTime.Text);
+                AfterList.Add(tb_EndTime.Text);
+                AfterList.Add(tb_OSVer.Text);
+                AfterList.Add(tb_ModelName.Text);
+                AfterList.Add(tb_Manufacturer.Text);
+                AfterList.Add(tb_Carrier.Text);
+
+                foreach (var tgbtn in new bool[] { (bool)tgbtn_01_bf.IsChecked, (bool)tgbtn_02_bf.IsChecked, (bool)tgbtn_03_bf.IsChecked, (bool)tgbtn_04_bf.IsChecked,
+                                                    (bool)tgbtn_05_bf.IsChecked,(bool)tgbtn_06_bf.IsChecked,(bool)tgbtn_07_bf.IsChecked})
+                {
+                    string togle;
+                    if (tgbtn==true)
+                    {
+                        togle = "Y";
+                    }
+                    else
+                    {
+                        togle = "N";
+                    }
+
+                    BeforeList.Add(togle);
+                }
+
+                foreach (var tgbtn in new bool[] { (bool)tgbtn_01_af.IsChecked, (bool)tgbtn_02_af.IsChecked, (bool)tgbtn_03_af.IsChecked, (bool)tgbtn_04_af.IsChecked,
+                                                    (bool)tgbtn_05_af.IsChecked,(bool)tgbtn_06_af.IsChecked,(bool)tgbtn_07_af.IsChecked})
+                {
+                    string togle;
+                    if (tgbtn == true)
+                    {
+                        togle = "Y";
+                    }
+                    else
+                    {
+                        togle = "N";
+                    }
+
+                    AfterList.Add(togle);
+                }
+
+                MobileXML.GenerateBeforeXML(BeforeList);
+                MobileXML.GenerateAfterXML(AfterList);
+
+                MessageBox.Show("XML 생성 완료");
+
+                //string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "*.xml");
+                //string ZipPath = "점검결과_" + DateTime.Now.ToString("yyMMddHHmm") + ".zip";
+
+                //using (ZipArchive zip = ZipFile.Open(ZipPath, ZipArchiveMode.Create))
+                //{
+                //    List<string> files = new List<string>();
+                //    files.Add(xmlfiles[0]);
+                //    files.Add(xmlfiles[1]);
+
+                //    foreach (var file in files)
+                //    {
+                //        zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file));
+                //    }
+                //}
 
 
             }
