@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\
 MXML2
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\11217\Desktop\PCCARE\MXML2\App.xaml
 21031931893
 
-9547020424
+9311800959
 15931940256
 MainWindow.xaml;PopupBox_Window.xaml;
 

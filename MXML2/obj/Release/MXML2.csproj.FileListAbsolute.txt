@@ -1,0 +1,17 @@
+C:\Users\11217\Desktop\PCCARE\MXML2\bin\Release\MXML2.exe.config
+C:\Users\11217\Desktop\PCCARE\MXML2\bin\Release\MXML2.exe
+C:\Users\11217\Desktop\PCCARE\MXML2\bin\Release\MXML2.pdb
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MainWindow.g.cs
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\PopupBox_Window.g.cs
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\App.g.cs
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2_MarkupCompile.cache
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2_MarkupCompile.lref
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\App.baml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MainWindow.baml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\PopupBox_Window.baml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2.g.resources
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2.Properties.Resources.resources
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2.csproj.GenerateResource.cache
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2.csproj.CoreCompileInputs.cache
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2.exe
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Release\MXML2.pdb
