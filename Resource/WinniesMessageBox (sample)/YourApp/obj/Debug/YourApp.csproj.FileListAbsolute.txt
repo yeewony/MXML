@@ -1,0 +1,40 @@
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.csprojAssemblyReference.cache
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\MainWindow.g.cs
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\App.g.cs
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp_MarkupCompile.cache
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp_MarkupCompile.lref
+D:\VSprojects\WinniesMessageBox\YourApp\bin\Debug\YourApp.exe.config
+D:\VSprojects\WinniesMessageBox\YourApp\bin\Debug\YourApp.exe
+D:\VSprojects\WinniesMessageBox\YourApp\bin\Debug\YourApp.pdb
+D:\VSprojects\WinniesMessageBox\YourApp\bin\Debug\WinniesMessageBox.exe
+D:\VSprojects\WinniesMessageBox\YourApp\bin\Debug\WinniesMessageBox.pdb
+D:\VSprojects\WinniesMessageBox\YourApp\bin\Debug\WinniesMessageBox.exe.config
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\App.baml
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\MainWindow.baml
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.g.resources
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.Properties.Resources.resources
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.csproj.GenerateResource.cache
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.csproj.CoreCompileInputs.cache
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.csproj.CopyComplete
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.exe
+D:\VSprojects\WinniesMessageBox\YourApp\obj\Debug\YourApp.pdb
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\bin\Debug\YourApp.exe.config
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\bin\Debug\YourApp.exe
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\bin\Debug\YourApp.pdb
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\bin\Debug\WinniesMessageBox.exe
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\bin\Debug\WinniesMessageBox.pdb
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\bin\Debug\WinniesMessageBox.exe.config
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.csprojAssemblyReference.cache
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\MainWindow.g.cs
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\App.g.cs
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp_MarkupCompile.cache
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp_MarkupCompile.lref
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\App.baml
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\MainWindow.baml
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.g.resources
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.Properties.Resources.resources
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.csproj.GenerateResource.cache
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.csproj.CoreCompileInputs.cache
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.csproj.CopyComplete
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.exe
+C:\Users\11217\Desktop\PCCARE\Resource\WinniesMessageBox (sample)\YourApp\obj\Debug\YourApp.pdb

@@ -56,9 +56,18 @@ namespace MXML2
 
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
         {
-            ///모바일 점검 정보 리셋
+            if (btn_END.IsEnabled==true)
+            {
+                tgbtn_01_bf.IsChecked = false;
+                tgbtn_02_bf.IsChecked = false;
+                tgbtn_03_bf.IsChecked = false;
+                tgbtn_04_bf.IsChecked = false;
+                tgbtn_05_bf.IsChecked = false;
+                tgbtn_06_bf.IsChecked = false;
+                tgbtn_07_bf.IsChecked = false;
+            }
 
-            if (tb_StartTime.Text==string.Empty)
+            if (tb_StartTime.Text == string.Empty)
             {
                 tb_InputClipData.Text = null;
             }
@@ -70,7 +79,6 @@ namespace MXML2
             tb_Manufacturer.Text = null;
             tb_Carrier.Text = null;
 
-            ///토글 버튼 리셋
             tgbtn_01_bf.IsChecked = false;
             tgbtn_02_bf.IsChecked = false;
             tgbtn_03_bf.IsChecked = false;
@@ -82,6 +90,8 @@ namespace MXML2
             btn_START.IsEnabled = true;
             btn_END.IsEnabled = false;
             btn_GeneXML.IsEnabled = false;
+                
+            
         }
 
         private void btn_START_Inspection(object sender, RoutedEventArgs e)
@@ -98,7 +108,7 @@ namespace MXML2
 
                 tb_StartTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                MessageBox.Show("방해금지 모드를 설정하세요");
+                PopupBox.Show("방해금지 모드를 설정하세요");
 
                 tgbtn_01_af.IsEnabled = true;
                 tgbtn_02_af.IsEnabled = true;
@@ -120,7 +130,7 @@ namespace MXML2
             }
             catch (Exception)
             {
-                MessageBox.Show("점검 기기의 정보가 없거나 잘못된 정보입니다");
+                PopupBox.Show("점검 기기의 정보가 없거나 잘못된 정보입니다");
             }
             
 
@@ -132,13 +142,14 @@ namespace MXML2
             {
                 tb_EndTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                MessageBox.Show("방해금지 모드를 해제하세요");
+                PopupBox.Show("방해금지 모드를 해제하세요");
 
+                btn_START.IsEnabled = false;
                 btn_GeneXML.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                PopupBox.Show(ex.ToString());
             }
         }
 
@@ -199,7 +210,7 @@ namespace MXML2
                 MobileXML.GenerateBeforeXML(BeforeList);
                 MobileXML.GenerateAfterXML(AfterList);
 
-                MessageBox.Show("XML 생성 완료");
+                PopupBox.Show("XML 생성 완료");
 
                 //string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "*.xml");
                 //string ZipPath = "점검결과_" + DateTime.Now.ToString("yyMMddHHmm") + ".zip";
@@ -221,6 +232,23 @@ namespace MXML2
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btn_Close_Dialog(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MXML2_Window_Move(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                DragMove();
+            }
+            catch (Exception ex)
+            {
+                PopupBox.Show(ex.ToString());
             }
         }
     }

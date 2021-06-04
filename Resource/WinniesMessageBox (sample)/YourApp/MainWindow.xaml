@@ -1,0 +1,15 @@
+﻿<Window x:Class="YourApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YourApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnMessageBox1" Content="Show MessageBox 1" Style="{StaticResource MyButton}" HorizontalAlignment="Left" Margin="130,308,0,0" VerticalAlignment="Top" Width="264" Height="41" Background="#FF009696" Click="btnMessageBox_Click"/>
+        <Button x:Name="btnShortNotification" Content="Show ShortNotification" Style="{StaticResource ResourceKey=MyButton}" HorizontalAlignment="Left" Margin="420,308,0,0" VerticalAlignment="Top" Width="264" Height="87" Background="#FF009696" Click="btnShortNotification_Click"/>
+        <TextBox x:Name="txbYourText" Text="Your text" Margin="130,109,109.6,134" FontSize="22"/>
+        <Button x:Name="btnMessageBox2" Content="Show MessageBox 2" Style="{StaticResource MyButton}" HorizontalAlignment="Left" Margin="130,354,0,0" VerticalAlignment="Top" Width="264" Height="41" Background="#FF009696" Click="btnMessageBox2_Click" RenderTransformOrigin="0.481,1.057"/>
+    </Grid>
+</Window>

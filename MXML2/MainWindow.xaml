@@ -3,78 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MXML2"        mc:Ignorable="d"
-        Title="MXML 2" Height="507" Width="790" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF36393F" Loaded="MainWindow_Loaded">
-
-    <Window.Resources>
-        <Style x:Key ="ToggleRadius" TargetType="ToggleButton">
-            <Setter Property="Background" Value="#ED4245"/>
-            <Setter Property="Foreground" Value="#f7f7f7"/>
-            <Setter Property="Content" Value="취약"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ToggleButton">
-                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="Content" Value="양호"/>
-                    <Setter Property="Background" Value="#3BA55C"/>
-                    <Setter Property="Foreground" Value="#f7f7f7"/>
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Background" Value="#474747"/>
-                    <Setter Property="Foreground" Value="#252525"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style x:Key="ButtonRadius" TargetType="Button">
-            <Setter Property="Background" Value="#006bcb" />
-            <Setter Property="Foreground" Value="#f7f7f7" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" CornerRadius="8" Background="{TemplateBinding Background}" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#4c98ff"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Background" TargetName="border" Value="#5e5e5e"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="ButtonReset" TargetType="Button">
-            <Setter Property="Background" Value="#fb8900"/>
-            <Setter Property="Foreground" Value="#f7f7f7"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#FA4A0C"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-    </Window.Resources>
+        xmlns:local="clr-namespace:MXML2"        
+        mc:Ignorable="d"
+        Title="MXML 2" Height="478" Width="773" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF36393F" Loaded="MainWindow_Loaded" AllowsTransparency="False" WindowStyle="None" BorderBrush="#FF252525" BorderThickness="2" MouseDown="MXML2_Window_Move">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -85,12 +16,12 @@
             <RowDefinition Height="496.943"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="#FF202225" Height="50" VerticalAlignment="Top"/>
-        <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,20.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_START_Inspection" FontWeight="Bold"/>
-        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,95.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_END_Inspection" FontWeight="Bold" IsEnabled="False"/>
-        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640.167,170.083,0,0" FontSize="18" Height="55" VerticalAlignment="Top" FontWeight="Bold" Click="btn_GeneXML_Execution" IsEnabled="False"/>
-        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="640.167,245.083,0,0" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False" Height="55" VerticalAlignment="Top" Foreground="#FF6E6E6E" FontWeight="Bold"/>
-        <Button x:Name="btn_Reset" Style="{StaticResource ButtonReset}" Content="초기화" HorizontalAlignment="Left" Margin="640.167,320.083,0,0" VerticalAlignment="Top" Width="120" Height="40" Grid.Row="1" Click="btn_Reset_ResetAll" FontWeight="Bold"/>
-        <Label Content="모바일 보고서 작성기" HorizontalAlignment="Left" Margin="10,4,0,4" FontSize="24" Foreground="#FFF7F7F7" FontFamily="Segoe UI" FontWeight="Bold"/>
+        <Button x:Name="btn_START" Style="{StaticResource ButtonRadius}" Content="점검 시작" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640,20,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_START_Inspection" FontWeight="Bold"/>
+        <Button x:Name="btn_END" Style="{StaticResource ButtonRadius}" Content="점검 종료" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640,95,0,0" FontSize="18" Height="55" VerticalAlignment="Top" Click="btn_END_Inspection" FontWeight="Bold" IsEnabled="False"/>
+        <Button x:Name="btn_GeneXML" Style="{StaticResource ButtonRadius}" Content="XML 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF006BCB" BorderBrush="{x:Null}" Margin="640,170,0,0" FontSize="18" Height="55" VerticalAlignment="Top" FontWeight="Bold" Click="btn_GeneXML_Execution" IsEnabled="False"/>
+        <Button x:Name="btn_geneDOCX" Style="{StaticResource ButtonRadius}" Content="보고서 생성" HorizontalAlignment="Left" Grid.Row="1" Width="120" Background="#FF7289DA" BorderBrush="{x:Null}" Margin="640,245,0,0" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" IsEnabled="False" Height="55" VerticalAlignment="Top" Foreground="#FF6E6E6E" FontWeight="Bold"/>
+        <Button x:Name="btn_Reset" Style="{StaticResource ButtonReset}" Content="초기화" HorizontalAlignment="Left" Margin="640,320,0,0" VerticalAlignment="Top" Width="120" Height="40" Grid.Row="1" Click="btn_Reset_ResetAll" FontWeight="Bold"/>
+        <Label Content="모바일 보고서 작성기" HorizontalAlignment="Left" Margin="10,4,0,4" FontSize="24" Foreground="#FFF7F7F7" FontFamily="Segoe UI" FontWeight="Bold" Width="239"/>
         <Rectangle Fill="#FF2F3136" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" RadiusY="10" Grid.Row="1" RadiusX="10" VerticalAlignment="Top" Width="300"/>
         <Grid HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300">
             <Rectangle Fill="#FF252525" Height="30" Margin="10,10,10,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top"/>
@@ -108,7 +39,7 @@
             <TextBox x:Name="tb_ModelName" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,296,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
             <TextBox x:Name="tb_Manufacturer" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,331,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
             <TextBox x:Name="tb_Carrier" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,363,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#FF202225" Foreground="#FFF7F7F7" VerticalContentAlignment="Center"/>
-            <Label Content="모바일 정보를 여기에 붙여넣기 하세요" Margin="26,101,26,0" VerticalAlignment="Top" Foreground="#FF646464" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False"/>
+            <Label Content="모바일 정보를 여기에 붙여넣기 하세요" Margin="42,107,43,0" VerticalAlignment="Top" Foreground="#FF646464" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Padding="0"/>
         </Grid>
         <Rectangle Fill="#FF2F3136" HorizontalAlignment="Left" Height="400" Margin="320,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" RadiusX="10" RadiusY="10"/>
         <Grid HorizontalAlignment="Left" Height="400" Margin="320,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300">
@@ -146,7 +77,8 @@
             <Label Content="7. 백신 업데이트, 실시간 감시" HorizontalAlignment="Left" Margin="14.666,320,0,44.999" Foreground="#FFF7F7F7" Height="35" FontSize="11" VerticalContentAlignment="Center"/>
             <ToggleButton x:Name="tgbtn_07_bf" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="180,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
             <ToggleButton x:Name="tgbtn_07_af" Style="{StaticResource ToggleRadius}" HorizontalAlignment="Left" Margin="235,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
-            <Label Content="Dinner.At.Home" HorizontalAlignment="Left" Margin="194,364,0,0" VerticalAlignment="Top" Foreground="#FF616161"/>
+            <Label Content="Credit" HorizontalAlignment="Left" Margin="247,364,0,0" VerticalAlignment="Top" Foreground="#FF616161"/>
         </Grid>
+        <Button x:Name="btn_Close" Style="{StaticResource ButtonCloseWindow}" Content="" Margin="732,17,0,0" Width="17" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Background="#FFF5251D" IsTabStop="False" BorderThickness="0" Click="btn_Close_Dialog" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Leelawadee UI Semilight" Padding="10" HorizontalAlignment="Left" Focusable="False" Height="17" VerticalAlignment="Top"/>
     </Grid>
 </Window>

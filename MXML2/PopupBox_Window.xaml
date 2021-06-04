@@ -1,0 +1,17 @@
+﻿<Window x:Class="MXML2.PopupBox_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MXML2"
+        Title="PopupBox" Width="230" Height="130"  Background="{x:Null}" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" Foreground="{x:Null}" BorderThickness="0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Border Width="230" Height="130" BorderThickness="0" Background="#FF36393F" CornerRadius="10" HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.RowSpan="2"/>
+        <TextBox x:Name="tb_MessageZone" TextWrapping="Wrap" Text="TextBox" Margin="10" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" Foreground="#FFF7F7F7" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="btn_popupclose" Style="{StaticResource popupclosebtn}" Content="확 인" Margin="80,8" Grid.Row="1" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Background="#FF202225" FontSize="16" FontWeight="Bold" Opacity="0.9" Click="btn_popupcloseClick"/>
+    </Grid>
+</Window>

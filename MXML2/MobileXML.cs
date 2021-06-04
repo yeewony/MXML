@@ -140,5 +140,10 @@ namespace MXML2
             }
         }
 
+        public static void GenerateDOCX()
+        {
+
+        }
+
     }
 }
