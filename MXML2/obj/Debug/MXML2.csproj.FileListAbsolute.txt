@@ -34,3 +34,11 @@ C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.pdb
 C:\Users\11217\Desktop\PCCARE\MXML2\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\11217\Desktop\PCCARE\MXML2\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.csproj.CopyComplete
+D:\PCCARE\PCCARE\MXML2\obj\Debug\PopupBox_Window.g.cs
+D:\PCCARE\PCCARE\MXML2\obj\Debug\PopupBox_Window.baml
+D:\PCCARE\PCCARE\MXML2\obj\Debug\MXML2.csproj.CopyComplete
+D:\PCCARE\PCCARE\MXML2\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\PCCARE\PCCARE\MXML2\obj\Debug\MXML2.csproj.Fody.CopyLocal.cache
+D:\PCCARE\PCCARE\MXML2\obj\Debug\ColorPalette_Default.baml
+D:\PCCARE\PCCARE\MXML2\obj\Debug\ColorPalette_Pinky.baml
+D:\PCCARE\PCCARE\MXML2\obj\Debug\App.baml

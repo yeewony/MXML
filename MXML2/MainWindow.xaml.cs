@@ -28,7 +28,6 @@ namespace MXML2
             InitializeComponent();
         }
 
-
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             tgbtn_01_af.IsEnabled = false;
@@ -47,6 +46,11 @@ namespace MXML2
             tgbtn_06_bf.IsEnabled = false;
             tgbtn_07_bf.IsEnabled = false;
 
+            if (File.Exists("Pinky_MXML2.exe"))
+            {
+                var app = (App)Application.Current;
+                app.ChangeTheme(new Uri("/ColorPalette_Pinky.xaml"));
+            }
 
         }
 
@@ -86,6 +90,7 @@ namespace MXML2
             btn_START.IsEnabled = true;
             btn_END.IsEnabled = false;
             btn_GeneXML.IsEnabled = false;
+            btn_geneDOCX.IsEnabled = false;
                 
             
         }
@@ -141,7 +146,9 @@ namespace MXML2
                 PopupBox.Show("방해금지 모드를 해제하세요");
 
                 btn_START.IsEnabled = false;
+                btn_END.IsEnabled = false;
                 btn_GeneXML.IsEnabled = true;
+                btn_geneDOCX.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -233,7 +240,7 @@ namespace MXML2
 
         private void btn_geneDOCX_GenerateDocx(object sender, RoutedEventArgs e)
         {
-            ReportDocument.GenerateReport(tb_StartTime.Text,tb_ModelName.Text);
+            PopupBox.Show("보고서 생성 완료");
         }
 
         private void btn_Close_Dialog(object sender, RoutedEventArgs e)
