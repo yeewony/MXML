@@ -31,3 +31,6 @@ C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.csproj.GenerateResource.cach
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.csproj.CoreCompileInputs.cache
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.exe
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.pdb
+C:\Users\11217\Desktop\PCCARE\MXML2\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\11217\Desktop\PCCARE\MXML2\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\MXML2.csproj.CopyComplete

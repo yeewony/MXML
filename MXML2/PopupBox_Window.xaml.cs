@@ -23,7 +23,7 @@ namespace MXML2
         {
             InitializeComponent();
 
-            tb_MessageZone.Text = MessageText;
+            tbb_MessageZone.Text = MessageText;
         }
 
         private void btn_popupcloseClick(object sender, RoutedEventArgs e)

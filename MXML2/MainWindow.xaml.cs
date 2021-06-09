@@ -47,11 +47,7 @@ namespace MXML2
             tgbtn_06_bf.IsEnabled = false;
             tgbtn_07_bf.IsEnabled = false;
 
-            if (File.Exists("PinkyMXML2.exe"))
-            {
-                MessageBox.Show("Cherry Blossom Activated");
-                
-            }
+
         }
 
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
@@ -235,21 +231,24 @@ namespace MXML2
             }
         }
 
+        private void btn_geneDOCX_GenerateDocx(object sender, RoutedEventArgs e)
+        {
+            ReportDocument.GenerateReport(tb_StartTime.Text,tb_ModelName.Text);
+        }
+
         private void btn_Close_Dialog(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void MXML2_Window_Move(object sender, MouseButtonEventArgs e)
         {
-            try
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
-            catch (Exception ex)
-            {
-                PopupBox.Show(ex.ToString());
-            }
         }
+
+        
     }
 }

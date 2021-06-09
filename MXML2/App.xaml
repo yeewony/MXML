@@ -76,7 +76,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" CornerRadius="50" Background="{TemplateBinding Background}" BorderThickness="0" Width="17" Height="17">
+                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="0" Width="18" Height="18">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -95,7 +95,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style x:Key="popupclosebtn" TargetType="Button">
             <Setter Property="Background" Value="#202225"/>
             <Setter Property="Template">
