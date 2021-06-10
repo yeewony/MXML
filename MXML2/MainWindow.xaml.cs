@@ -46,12 +46,38 @@ namespace MXML2
             tgbtn_06_bf.IsEnabled = false;
             tgbtn_07_bf.IsEnabled = false;
 
-            if (File.Exists("Pinky_MXML2.exe"))
+            if (File.Exists("Pinky MXML2.exe"))
             {
-                var app = (App)Application.Current;
-                app.ChangeTheme(new Uri("/ColorPalette_Pinky.xaml"));
-            }
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Pink.xaml", UriKind.Relative);
 
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(dic);
+            }
+            else if (File.Exists("Mintful MXML2.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Mint.xaml", UriKind.Relative);
+
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(dic);
+            }
+            else if (File.Exists("MXML2 In Sky.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Sky.xaml", UriKind.Relative);
+
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(dic);
+            }
+            else if (File.Exists("EggDrop MXML2.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Yellow.xaml", UriKind.Relative);
+
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(dic);
+            }
         }
 
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
@@ -90,7 +116,6 @@ namespace MXML2
             btn_START.IsEnabled = true;
             btn_END.IsEnabled = false;
             btn_GeneXML.IsEnabled = false;
-            btn_geneDOCX.IsEnabled = false;
                 
             
         }
@@ -148,7 +173,6 @@ namespace MXML2
                 btn_START.IsEnabled = false;
                 btn_END.IsEnabled = false;
                 btn_GeneXML.IsEnabled = true;
-                btn_geneDOCX.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -213,34 +237,32 @@ namespace MXML2
                 MobileXML.GenerateBeforeXML(BeforeList);
                 MobileXML.GenerateAfterXML(AfterList);
 
-                PopupBox.Show("XML 생성 완료");
 
-                //string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "*.xml");
-                //string ZipPath = "점검결과_" + DateTime.Now.ToString("yyMMddHHmm") + ".zip";
 
-                //using (ZipArchive zip = ZipFile.Open(ZipPath, ZipArchiveMode.Create))
-                //{
-                //    List<string> files = new List<string>();
-                //    files.Add(xmlfiles[0]);
-                //    files.Add(xmlfiles[1]);
+                string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "*.xml");
+                string ZipPath = "점검결과_" + DateTime.Now.ToString("yyMMddHHmm") + ".zip";
 
-                //    foreach (var file in files)
-                //    {
-                //        zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file));
-                //    }
-                //}
+                using (ZipArchive zip = ZipFile.Open(ZipPath, ZipArchiveMode.Create))
+                {
+                    List<string> files = new List<string>();
+                    files.Add(xmlfiles[0]);
+                    files.Add(xmlfiles[1]);
 
+                    foreach (var file in files)
+                    {
+                        zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file));
+                    }
+                }
+
+
+
+                PopupBox.Show("보고서가 생성되었습니다");
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void btn_geneDOCX_GenerateDocx(object sender, RoutedEventArgs e)
-        {
-            PopupBox.Show("보고서 생성 완료");
         }
 
         private void btn_Close_Dialog(object sender, RoutedEventArgs e)

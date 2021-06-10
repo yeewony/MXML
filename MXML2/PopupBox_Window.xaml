@@ -9,7 +9,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ColorPalette_Default.xaml"/>
+                <ResourceDictionary Source="Resources/ColorPalette_Default.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -19,8 +19,8 @@
             <RowDefinition Height="17*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <Border Width="230" Height="130" BorderThickness="0" Background="#FF36393F" CornerRadius="10" HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.RowSpan="2"/>
-        <Button x:Name="btn_popupclose" Style="{StaticResource PopupButtonClose}" Content="확 인" Margin="80,8" Grid.Row="1" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Background="#FF202225" FontSize="16" FontWeight="Bold" Click="btn_popupcloseClick"/>
+        <Border Style="{DynamicResource PopupboxWindow}" Width="230" Height="130" BorderThickness="0" CornerRadius="10" HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.RowSpan="2"/>
+        <Button x:Name="btn_popupclose" Style="{DynamicResource PopupButtonClose}" Content="확 인" Margin="80,8" Grid.Row="1" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" FontSize="16" FontWeight="Bold" Click="btn_popupcloseClick"/>
         <Label Margin="10" Height="65" Width="210" Foreground="#FFF7F7F7" Padding="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontWeight="Bold">
             <TextBlock x:Name="tbb_MessageZone" Text="Whatever" TextWrapping="Wrap" TextAlignment="Center"/>
         </Label>
