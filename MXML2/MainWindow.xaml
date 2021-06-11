@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MXML2"        
         mc:Ignorable="d"
-        Title="MXML 2" Style="{DynamicResource Background}" Height="478" Width="773" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="MainWindow_Loaded" AllowsTransparency="False" WindowStyle="None" BorderThickness="2" MouseDown="MXML2_Window_Move">
+        Title="MXML 2" Style="{DynamicResource Background}" Height="478" Width="773" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="MainWindow_Loaded" AllowsTransparency="False" WindowStyle="None" BorderThickness="1" MouseDown="MXML2_Window_Move">
 
 
     <Grid>
@@ -39,7 +39,7 @@
             <TextBox x:Name="tb_ModelName" Style="{DynamicResource TextBox}" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,296,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="11"/>
             <TextBox x:Name="tb_Manufacturer" Style="{DynamicResource TextBox}" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,331,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="11"/>
             <TextBox x:Name="tb_Carrier" Style="{DynamicResource TextBox}" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="85,363,10,0" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="11"/>
-            <Label Style="{DynamicResource ClipHintLabel}" Content="모바일 정보를 여기에 붙여넣기 하세요" Margin="42,107,43,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Padding="0"/>
+            <Label Style="{DynamicResource ClipHintLabel}" Content="모바일 정보를 여기에 붙여넣기 하세요" Margin="42,107,43,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
         </Grid>
         <Rectangle Style="{DynamicResource RectangleLight}" HorizontalAlignment="Left" Height="400" Margin="320,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" RadiusX="10" RadiusY="10"/>
         <Grid HorizontalAlignment="Left" Height="400" Margin="320,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300">
@@ -51,34 +51,34 @@
             <Label Style="{DynamicResource LabelRightForeground}" Content="  ↆ 점검 항목" HorizontalAlignment="Left" Margin="15,50,0,0" VerticalAlignment="Top" FontSize="11" Height="25" Padding="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,80,10,0" Height="35" VerticalAlignment="Top"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="1. 스마트폰 잠금설정" HorizontalAlignment="Left" Margin="15,80,0,284.999" VerticalContentAlignment="Center" Height="35"/>
-            <ToggleButton x:Name="tgbtn_01_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,84.5,0,289.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Padding="1" Height="26"/>
-            <ToggleButton x:Name="tgbtn_01_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,84.5,0,289.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_01_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,84.5,0,289.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Padding="1" Height="26"/>
+            <ToggleButton x:Name="tgbtn_01_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,84.5,0,289.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,120,10,0" Height="35" VerticalAlignment="Top"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="2. 구글 Play 프로텍트 인증" HorizontalAlignment="Left" Margin="15,120,0,244.999" VerticalContentAlignment="Center" Height="35"/>
-            <ToggleButton x:Name="tgbtn_02_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,124.078,0,249.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
-            <ToggleButton x:Name="tgbtn_02_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,124.078,0,249.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_02_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,124.078,0,249.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_02_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,124.078,0,249.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,160,10,0" Height="35" VerticalAlignment="Top"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="3. 최신 보안 업데이트" HorizontalAlignment="Left" Margin="15,160,0,204.999" VerticalContentAlignment="Center" Height="35"/>
-            <ToggleButton x:Name="tgbtn_03_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,164.078,0,209.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
-            <ToggleButton x:Name="tgbtn_03_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,164.078,0,209.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_03_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,164.078,0,209.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_03_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,164.078,0,209.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,200,10,0" Height="35" VerticalAlignment="Top"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="4. 개발자 옵션 활성화" HorizontalAlignment="Left" Margin="15,200,0,164.999" VerticalContentAlignment="Center" Height="35"/>
-            <ToggleButton x:Name="tgbtn_04_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,204.5,0,169.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
-            <ToggleButton x:Name="tgbtn_04_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,204.5,0,169.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_04_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,204.5,0,169.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_04_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,204.5,0,169.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,240,10,0" VerticalAlignment="Top" Height="35"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="5. 애플리케이션 권한 관리" HorizontalAlignment="Left" Margin="15,240,0,124.999" VerticalContentAlignment="Center" Height="35"/>
-            <ToggleButton x:Name="tgbtn_05_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,244.5,0,129.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
-            <ToggleButton x:Name="tgbtn_05_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,244.5,0,129.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_05_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,244.5,0,129.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_05_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,244.5,0,129.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,280,10,0" Height="35" VerticalAlignment="Top"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="6. 백신 설치" HorizontalAlignment="Left" Margin="15,280,0,84.999" VerticalContentAlignment="Center" Height="35"/>
-            <ToggleButton x:Name="tgbtn_06_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,284.5,0,89.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
-            <ToggleButton x:Name="tgbtn_06_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,284.5,0,89.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_06_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,284.5,0,89.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_06_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,284.5,0,89.499" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Rectangle Style="{DynamicResource RectangleDark}" RadiusX="10" RadiusY="10" Margin="10,320,10,0" VerticalAlignment="Top" Height="35"/>
             <Label Style="{DynamicResource LabelRightForeground}" Content="7. 백신 업데이트, 실시간 감시" HorizontalAlignment="Left" Margin="14.666,320,0,44.999" Height="35" FontSize="11" VerticalContentAlignment="Center"/>
-            <ToggleButton x:Name="tgbtn_07_bf" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
-            <ToggleButton x:Name="tgbtn_07_af" Style="{StaticResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_07_bf" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="180,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" FontWeight="Bold" Height="26"/>
+            <ToggleButton x:Name="tgbtn_07_af" Style="{DynamicResource ToggleButtonStyle}" HorizontalAlignment="Left" Margin="235,324.078,0,49.921" Width="40" BorderBrush="{x:Null}" BorderThickness="0" IsChecked="True" FontWeight="Bold" Height="26"/>
             <Label Style="{DynamicResource ClipHintLabel}" Content="Credit" HorizontalAlignment="Left" Margin="247,364,0,0" VerticalAlignment="Top" />
         </Grid>
-        <Button x:Name="btn_Close" Style="{StaticResource WindowCloseButton}" Content="x" Margin="736,16,14,15" Width="18" BorderBrush="{x:Null}" Foreground="#FF202225" Background="#FFF5251D" IsTabStop="False" BorderThickness="0" Click="btn_Close_Dialog" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Leelawadee UI Semilight" Padding="1" HorizontalAlignment="Center" Focusable="False" Height="18" VerticalAlignment="Center"/>
+        <Button x:Name="btn_Close" Style="{DynamicResource WindowCloseButton}" Content="x" Margin="736,16,14,15" Width="18" BorderBrush="{x:Null}" Foreground="#FF202225" Background="#FFF5251D" IsTabStop="False" BorderThickness="0" Click="btn_Close_Dialog" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Leelawadee UI Semilight" Padding="1" HorizontalAlignment="Center" Focusable="False" Height="18" VerticalAlignment="Center"/>
     </Grid>
 </Window>

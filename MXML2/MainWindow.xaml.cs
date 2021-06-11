@@ -70,10 +70,10 @@ namespace MXML2
                 Application.Current.Resources.MergedDictionaries.Clear();
                 Application.Current.Resources.MergedDictionaries.Add(dic);
             }
-            else if (File.Exists("EggDrop MXML2.exe"))
+            else if (File.Exists("Pastel MXML2.exe"))
             {
                 ResourceDictionary dic = new ResourceDictionary();
-                dic.Source = new Uri("Resources/ColorPalette_Yellow.xaml", UriKind.Relative);
+                dic.Source = new Uri("Resources/ColorPalette_Pastel.xaml", UriKind.Relative);
 
                 Application.Current.Resources.MergedDictionaries.Clear();
                 Application.Current.Resources.MergedDictionaries.Add(dic);

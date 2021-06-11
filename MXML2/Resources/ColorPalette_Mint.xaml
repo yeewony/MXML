@@ -21,14 +21,14 @@
                 <Setter Property="Foreground" Value="#f7f7f7"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="#E5F3F6"/>
+                <Setter Property="Background" Value="#ABECDF"/>
                 <Setter Property="Foreground" Value="#00acb1"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="NormalButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#6EE0D1" />
+        <Setter Property="Background" Value="#00acb1" />
         <Setter Property="Foreground" Value="#f7f7f7" />
         <Setter Property="Template">
             <Setter.Value>
@@ -115,19 +115,19 @@
     </Style>
 
     <Style x:Key="Background" TargetType="Window">
-        <Setter Property="Background" Value="#e5f3f6"/>
+        <Setter Property="Background" Value="#f7f7f7"/>
     </Style>
 
     <Style x:Key="Taskbar" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#78D9D3"/>
+        <Setter Property="Fill" Value="#00acb1"/>
     </Style>
 
     <Style x:Key="RectangleDark" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#A0E9E3"/>
+        <Setter Property="Fill" Value="#D2F3EB"/>
     </Style>
 
     <Style x:Key="RectangleLight" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#78D9D3"/>
+        <Setter Property="Fill" Value="#6EE0D1"/>
     </Style>
 
     <Style x:Key="TextBox" TargetType="TextBox">
@@ -135,7 +135,7 @@
         <Setter Property="Foreground" Value="#00acb1"/>
     </Style>
     <Style x:Key="ClipHintLabel" TargetType="Label">
-        <Setter Property="Foreground" Value="#646464"/>
+        <Setter Property="Foreground" Value="#00acb1"/>
     </Style>
 
     <Style x:Key="PopupboxWindow" TargetType="Border">
@@ -147,6 +147,14 @@
     </Style>
     <Style x:Key="LabelRightForeground" TargetType="Label">
         <Setter Property="Foreground" Value="#00acb1"/>
+    </Style>
+
+    <Style x:Key="LabelTaskbarForeground" TargetType="Label">
+        <Setter Property="Foreground" Value="#ABECDF"/>
+    </Style>
+    
+    <Style x:Key="LabelPopupBoxForeground" TargetType="Label">
+        <Setter Property="Foreground" Value="#f7f7f7"/>
     </Style>
 
 </ResourceDictionary>

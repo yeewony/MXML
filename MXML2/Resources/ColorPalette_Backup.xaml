@@ -150,6 +150,9 @@
     <Style x:Key="LabelTaskbarForeground" TargetType="Label">
         <Setter Property="Foreground" Value="#f7f7f7"/>
     </Style>
+    <Style x:Key="LabelPopupBoxForeground" TargetType="Label">
+        <Setter Property="Foreground" Value="#f7f7f7"/>
+    </Style>
 
 
 </ResourceDictionary>

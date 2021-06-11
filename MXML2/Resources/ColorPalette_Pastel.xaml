@@ -21,14 +21,14 @@
                 <Setter Property="Foreground" Value="#f7f7f7"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="#C7E5F0"/>
-                <Setter Property="Foreground" Value="#81D5FA"/>
+                <Setter Property="Background" Value="#EDECED"/>
+                <Setter Property="Foreground" Value="#252525"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="NormalButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#81D5FA" />
+        <Setter Property="Background" Value="#9BB8D5" />
         <Setter Property="Foreground" Value="#f7f7f7" />
         <Setter Property="Template">
             <Setter.Value>
@@ -38,10 +38,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#97D8FA"/>
+                            <Setter Property="Background" TargetName="border" Value="#E1DCEA"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="border" Value="#C7E5F0"/>
+                            <Setter Property="Background" TargetName="border" Value="#F0EBC8"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -50,7 +50,7 @@
     </Style>
 
     <Style x:Key="ResetButton" TargetType="Button">
-        <Setter Property="Background" Value="#fb8900"/>
+        <Setter Property="Background" Value="#EB9887"/>
         <Setter Property="Foreground" Value="#f7f7f7"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -60,7 +60,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#FA4A0C"/>
+                            <Setter Property="Background" TargetName="border" Value="#EED5CE"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -93,7 +93,7 @@
     </Style>
 
     <Style x:Key="PopupButtonClose" TargetType="Button">
-        <Setter Property="Background" Value="#81D5FA"/>
+        <Setter Property="Background" Value="#9BB8D5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -102,10 +102,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#D8EAF4"/>
+                            <Setter Property="Background" TargetName="border" Value="#E1DCEA"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#D8EAF4"/>
+                            <Setter Property="Background" TargetName="border" Value="#E1DCEA"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -114,44 +114,45 @@
     </Style>
 
     <Style x:Key="Background" TargetType="Window">
-        <Setter Property="Background" Value="#EDF4F4"/>
+        <Setter Property="Background" Value="#EDECED"/>
     </Style>
 
     <Style x:Key="Taskbar" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#09b1ec"/>
+        <Setter Property="Fill" Value="#9CC4AB"/>
     </Style>
 
     <Style x:Key="RectangleDark" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#97D8FA"/>
+        <Setter Property="Fill" Value="#CCE4C3"/>
     </Style>
 
     <Style x:Key="RectangleLight" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#c7e6f0"/>
+        <Setter Property="Fill" Value="#B1D5C2"/>
     </Style>
 
     <Style x:Key="TextBox" TargetType="TextBox">
-        <Setter Property="Background" Value="#EDF4F4"/>
-        <Setter Property="Foreground" Value="#252525"/>
+        <Setter Property="Background" Value="#CCE4C3"/>
+        <Setter Property="Foreground" Value="#646464"/>
     </Style>
     <Style x:Key="ClipHintLabel" TargetType="Label">
-        <Setter Property="Foreground" Value="#81D5FA"/>
+        <Setter Property="Foreground" Value="#9BB8D5"/>
     </Style>
 
     <Style x:Key="PopupboxWindow" TargetType="Border">
-        <Setter Property="Background" Value="#09b1ec"/>
+        <Setter Property="Background" Value="#EDECED"/>
     </Style>
 
     <Style x:Key="LabelLeftForeground" TargetType="Label">
-        <Setter Property="Foreground" Value="#474747"/>
+        <Setter Property="Foreground" Value="#52615C"/>
     </Style>
     <Style x:Key="LabelRightForeground" TargetType="Label">
-        <Setter Property="Foreground" Value="#474747"/>
+        <Setter Property="Foreground" Value="#52615C"/>
     </Style>
     <Style x:Key="LabelTaskbarForeground" TargetType="Label">
-        <Setter Property="Foreground" Value="#f7f7f7"/>
+        <Setter Property="Foreground" Value="#52615C"/>
     </Style>
     <Style x:Key="LabelPopupBoxForeground" TargetType="Label">
-        <Setter Property="Foreground" Value="#f7f7f7"/>
+        <Setter Property="Foreground" Value="#52615C"/>
     </Style>
+
 
 </ResourceDictionary>

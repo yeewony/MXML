@@ -47,3 +47,4 @@ C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\Resources\ColorPalette_Mint.baml
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\Resources\ColorPalette_Pink.baml
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\Resources\ColorPalette_Sky.baml
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\Resources\ColorPalette_Default.baml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\Debug\Resources\ColorPalette_Pastel.baml

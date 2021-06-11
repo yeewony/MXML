@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,42 @@ namespace MXML2
         private void btn_popupcloseClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void PopupBox_Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists("Pinky MXML2.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Pink.xaml", UriKind.Relative);
+
+                this.Resources.MergedDictionaries.Clear();
+                this.Resources.MergedDictionaries.Add(dic);
+            }
+            else if (File.Exists("Mintful MXML2.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Mint.xaml", UriKind.Relative);
+
+                this.Current.Resources.MergedDictionaries.Clear();
+                this.Current.Resources.MergedDictionaries.Add(dic);
+            }
+            else if (File.Exists("MXML2 In Sky.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Sky.xaml", UriKind.Relative);
+
+                this.Current.Resources.MergedDictionaries.Clear();
+                this.Current.Resources.MergedDictionaries.Add(dic);
+            }
+            else if (File.Exists("Pastel MXML2.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Pastel.xaml", UriKind.Relative);
+
+                this.Current.Resources.MergedDictionaries.Clear();
+                this.Current.Resources.MergedDictionaries.Add(dic);
+            }
         }
     }
 }
