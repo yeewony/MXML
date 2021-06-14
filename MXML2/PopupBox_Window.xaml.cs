@@ -47,24 +47,24 @@ namespace MXML2
                 ResourceDictionary dic = new ResourceDictionary();
                 dic.Source = new Uri("Resources/ColorPalette_Mint.xaml", UriKind.Relative);
 
-                this.Current.Resources.MergedDictionaries.Clear();
-                this.Current.Resources.MergedDictionaries.Add(dic);
+                this.Resources.MergedDictionaries.Clear();
+                this.Resources.MergedDictionaries.Add(dic);
             }
             else if (File.Exists("MXML2 In Sky.exe"))
             {
                 ResourceDictionary dic = new ResourceDictionary();
                 dic.Source = new Uri("Resources/ColorPalette_Sky.xaml", UriKind.Relative);
 
-                this.Current.Resources.MergedDictionaries.Clear();
-                this.Current.Resources.MergedDictionaries.Add(dic);
+                this.Resources.MergedDictionaries.Clear();
+                this.Resources.MergedDictionaries.Add(dic);
             }
             else if (File.Exists("Pastel MXML2.exe"))
             {
                 ResourceDictionary dic = new ResourceDictionary();
                 dic.Source = new Uri("Resources/ColorPalette_Pastel.xaml", UriKind.Relative);
 
-                this.Current.Resources.MergedDictionaries.Clear();
-                this.Current.Resources.MergedDictionaries.Add(dic);
+                this.Resources.MergedDictionaries.Clear();
+                this.Resources.MergedDictionaries.Add(dic);
             }
         }
     }

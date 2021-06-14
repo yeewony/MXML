@@ -187,6 +187,7 @@ namespace MXML2
 
                 List<string> BeforeList = new List<string>();
                 List<string> AfterList = new List<string>();
+                List<string> ReportList = new List<string>();
 
                 BeforeList.Add(tb_StartTime.Text);
                 BeforeList.Add(tb_EndTime.Text);
@@ -236,11 +237,11 @@ namespace MXML2
 
                 MobileXML.GenerateBeforeXML(BeforeList);
                 MobileXML.GenerateAfterXML(AfterList);
-
-
+                
+                string StartTime = DateTime.ParseExact(tb_StartTime.Text, "yyyy-MM-dd HH:mm:ss", null).ToString("yyMMddHHmm");
 
                 string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "*.xml");
-                string ZipPath = "점검결과_" + DateTime.Now.ToString("yyMMddHHmm") + ".zip";
+                string ZipPath = "점검결과_" + StartTime + ".zip";
 
                 using (ZipArchive zip = ZipFile.Open(ZipPath, ZipArchiveMode.Create))
                 {
@@ -254,6 +255,32 @@ namespace MXML2
                     }
                 }
 
+                ReportList.Add(tb_StartTime.Text);
+                ReportList.Add(tb_EndTime.Text);
+                ReportList.Add(tb_OSVer.Text);
+                ReportList.Add(tb_ModelName.Text);
+                ReportList.Add(tb_Manufacturer.Text);
+                ReportList.Add(tb_Carrier.Text);
+
+                foreach (var tgbtn in new bool[] { (bool)tgbtn_01_bf.IsChecked, (bool)tgbtn_02_bf.IsChecked, (bool)tgbtn_03_bf.IsChecked, (bool)tgbtn_04_bf.IsChecked,
+                                                    (bool)tgbtn_05_bf.IsChecked,(bool)tgbtn_06_bf.IsChecked,(bool)tgbtn_07_bf.IsChecked,(bool)tgbtn_01_af.IsChecked,
+                                                    (bool)tgbtn_02_af.IsChecked, (bool)tgbtn_03_af.IsChecked, (bool)tgbtn_04_af.IsChecked,
+                                                    (bool)tgbtn_05_af.IsChecked,(bool)tgbtn_06_af.IsChecked,(bool)tgbtn_07_af.IsChecked})
+                {
+                    string togle;
+                    if (tgbtn == true)
+                    {
+                        togle = "양호";
+                    }
+                    else
+                    {
+                        togle = "취약";
+                    }
+
+                    ReportList.Add(togle);
+                }
+
+                ReportDocument.GenerateReport(ReportList, StartTime);
 
 
                 PopupBox.Show("보고서가 생성되었습니다");
