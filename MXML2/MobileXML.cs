@@ -24,9 +24,10 @@ namespace MXML2
                 XmlDocument Mxml = new XmlDocument();
 
                 XmlDeclaration Mxmldecl;
-                Mxmldecl = Mxml.CreateXmlDeclaration("1.0", "UTF8", null);
+                Mxmldecl = Mxml.CreateXmlDeclaration("1.0", "UTF-8", "yes");
                 Mxmldecl.Encoding = "UTF-8";
                 Mxmldecl.Standalone = "yes";
+                Mxml.InsertBefore(Mxmldecl, Mxml.DocumentElement);
 
                 XmlNode root = Mxml.CreateElement("MOBILE-Check");
                 Mxml.AppendChild(root);
@@ -36,7 +37,7 @@ namespace MXML2
                 root.AppendChild(START_TIME);
 
                 XmlNode END_TIME = Mxml.CreateElement("END_TIME");
-                END_TIME.InnerText = InfoList[1];
+                END_TIME.InnerText = InfoList[0];
                 root.AppendChild(END_TIME);
 
                 XmlNode ANDROID_VERSION = Mxml.CreateElement("ANDROID_VERSION");
@@ -87,15 +88,16 @@ namespace MXML2
                 XmlDocument Mxml = new XmlDocument();
 
                 XmlDeclaration Mxmldecl;
-                Mxmldecl = Mxml.CreateXmlDeclaration("1.0", "UTF8", null);
+                Mxmldecl = Mxml.CreateXmlDeclaration("1.0", "UTF-8", "yes");
                 Mxmldecl.Encoding = "UTF-8";
                 Mxmldecl.Standalone = "yes";
+                Mxml.InsertBefore(Mxmldecl, Mxml.DocumentElement);
 
                 XmlNode root = Mxml.CreateElement("MOBILE-Check");
                 Mxml.AppendChild(root);
 
                 XmlNode START_TIME = Mxml.CreateElement("START_TIME");
-                START_TIME.InnerText = InfoList[0];
+                START_TIME.InnerText = InfoList[1];
                 root.AppendChild(START_TIME);
 
                 XmlNode END_TIME = Mxml.CreateElement("END_TIME");

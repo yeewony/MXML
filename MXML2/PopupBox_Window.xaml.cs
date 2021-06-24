@@ -66,6 +66,19 @@ namespace MXML2
                 this.Resources.MergedDictionaries.Clear();
                 this.Resources.MergedDictionaries.Add(dic);
             }
+            else if (File.Exists("MXML2 보라해.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Purple.xaml", UriKind.Relative);
+
+                this.Resources.MergedDictionaries.Clear();
+                this.Resources.MergedDictionaries.Add(dic);
+            }
+
+            Application curApp = Application.Current;
+            Window mainwindow = curApp.MainWindow;
+            this.Left = mainwindow.Left + (mainwindow.Width - this.ActualWidth) / 2;
+            this.Top = mainwindow.Top + (mainwindow.Height - this.ActualHeight) / 2;
         }
     }
 }

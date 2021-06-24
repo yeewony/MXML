@@ -60,65 +60,41 @@ namespace MXML2
                         Text.Text = Text.Text.Replace("MO_CARR", DataInfo[5]);
                     }
                     // 점검 대상 끝
+                }
 
-                    // 점검 결과 시작
-                    if (Text.Text.Contains("MO01_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO01_R", DataInfo[6]);
-                    }
-                    else if (Text.Text.Contains("MO02_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO02_R", DataInfo[7]);
-                    }
-                    else if (Text.Text.Contains("MO03_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO03_R", DataInfo[8]);
-                    }
-                    else if (Text.Text.Contains("MO04_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO04_R", DataInfo[9]);
-                    }
-                    else if (Text.Text.Contains("MO05_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO05_R", DataInfo[10]);
-                    }
-                    else if (Text.Text.Contains("MO06_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO06_R", DataInfo[11]);
-                    }
-                    else if (Text.Text.Contains("MO07_R"))
-                    {
-                        Text.Text = Text.Text.Replace("MO07_R", DataInfo[12]);
-                    }
-                    else if (Text.Text.Contains("MO01_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO01_RR", DataInfo[13]);
-                    }
-                    else if (Text.Text.Contains("MO02_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO02_RR", DataInfo[14]);
-                    }
-                    else if (Text.Text.Contains("MO03_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO03_RR", DataInfo[15]);
-                    }
-                    else if (Text.Text.Contains("MO04_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO04_RR", DataInfo[16]);
-                    }
-                    else if (Text.Text.Contains("MO05_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO05_RR", DataInfo[17]);
-                    }
-                    else if (Text.Text.Contains("MO06_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO06_RR", DataInfo[18]);
-                    }
-                    else if (Text.Text.Contains("MO07_RR"))
-                    {
-                        Text.Text = Text.Text.Replace("MO07_RR", DataInfo[19]);
-                    }
+                // 점검 결과 시작
 
+
+                for (int i = 1; i <= 7; i++)
+                {
+                    Table table = worddoc.MainDocumentPart.Document.Body.Elements<Table>().Last();
+
+                    TableRow row = table.Elements<TableRow>().ElementAt(i);
+
+                    TableCell cell = row.Elements<TableCell>().ElementAt(2);
+
+                    Paragraph p = cell.Elements<Paragraph>().First();
+
+                    Run r = p.Elements<Run>().First();
+
+                    Text t = r.Elements<Text>().First();
+                    t.Text = DataInfo[i+5];
+                }
+
+                for (int i = 1; i <= 7; i++)
+                {
+                    Table table = worddoc.MainDocumentPart.Document.Body.Elements<Table>().Last();
+
+                    TableRow row = table.Elements<TableRow>().ElementAt(i);
+
+                    TableCell cell = row.Elements<TableCell>().ElementAt(3);
+
+                    Paragraph p = cell.Elements<Paragraph>().First();
+
+                    Run r = p.Elements<Run>().First();
+
+                    Text t = r.Elements<Text>().First();
+                    t.Text = DataInfo[i + 12];
                 }
 
                 worddoc.Save();
@@ -126,6 +102,44 @@ namespace MXML2
             }
 
 
+        }
+
+        public static void ReplaceBeforeCell(string DocxFilename, int Cell, string Data)
+        {
+            using (WordprocessingDocument worddoc = WordprocessingDocument.Open(DocxFilename, true))
+            {
+                Table table = worddoc.MainDocumentPart.Document.Body.Elements<Table>().Last();
+
+                TableRow row = table.Elements<TableRow>().ElementAt(Cell);
+
+                TableCell cell = row.Elements<TableCell>().ElementAt(2);
+
+                Paragraph p = cell.Elements<Paragraph>().First();
+
+                Run r = p.Elements<Run>().First();
+
+                Text t = r.Elements<Text>().First();
+                t.Text = Data;
+            }            
+        }
+
+        public static void ReplaceAfterCell(string DocxFilename, int Cell, string Data)
+        {
+            using (WordprocessingDocument worddoc = WordprocessingDocument.Open(DocxFilename, true))
+            {
+                Table table = worddoc.MainDocumentPart.Document.Body.Elements<Table>().Last();
+
+                TableRow row = table.Elements<TableRow>().ElementAt(Cell);
+
+                TableCell cell = row.Elements<TableCell>().ElementAt(3);
+
+                Paragraph p = cell.Elements<Paragraph>().First();
+
+                Run r = p.Elements<Run>().First();
+
+                Text t = r.Elements<Text>().First();
+                t.Text = Data;
+            }
         }
     }
 }

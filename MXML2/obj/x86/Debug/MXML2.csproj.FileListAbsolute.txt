@@ -29,3 +29,7 @@ C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\MXML2.csproj.CopyComplete
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\MXML2.exe
 C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\MXML2.pdb
 C:\Users\11217\Desktop\PCCARE\MXML2\bin\x86\Debug\DocumentFormat.OpenXml.xml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\MXML2.csprojAssemblyReference.cache
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\Resources\ColorPalette_Purple.baml
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\ToastMessage.g.cs
+C:\Users\11217\Desktop\PCCARE\MXML2\obj\x86\Debug\ToastMessage.baml

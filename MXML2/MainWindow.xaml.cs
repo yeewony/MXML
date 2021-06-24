@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,27 +26,6 @@ namespace MXML2
     {
         public MainWindow()
         {
-            InitializeComponent();
-        }
-
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            tgbtn_01_af.IsEnabled = false;
-            tgbtn_02_af.IsEnabled = false;
-            tgbtn_03_af.IsEnabled = false;
-            tgbtn_04_af.IsEnabled = false;
-            tgbtn_05_af.IsEnabled = false;
-            tgbtn_06_af.IsEnabled = false;
-            tgbtn_07_af.IsEnabled = false;
-
-            tgbtn_01_bf.IsEnabled = false;
-            tgbtn_02_bf.IsEnabled = false;
-            tgbtn_03_bf.IsEnabled = false;
-            tgbtn_04_bf.IsEnabled = false;
-            tgbtn_05_bf.IsEnabled = false;
-            tgbtn_06_bf.IsEnabled = false;
-            tgbtn_07_bf.IsEnabled = false;
-
             if (File.Exists("Pinky MXML2.exe"))
             {
                 ResourceDictionary dic = new ResourceDictionary();
@@ -78,6 +58,52 @@ namespace MXML2
                 Application.Current.Resources.MergedDictionaries.Clear();
                 Application.Current.Resources.MergedDictionaries.Add(dic);
             }
+            else if (File.Exists("MXML2 보라해.exe"))
+            {
+                ResourceDictionary dic = new ResourceDictionary();
+                dic.Source = new Uri("Resources/ColorPalette_Purple.xaml", UriKind.Relative);
+
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(dic);
+            }
+
+            InitializeComponent();
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            tgbtn_01_af.IsEnabled = false;
+            tgbtn_02_af.IsEnabled = false;
+            tgbtn_03_af.IsEnabled = false;
+            tgbtn_04_af.IsEnabled = false;
+            tgbtn_05_af.IsEnabled = false;
+            tgbtn_06_af.IsEnabled = false;
+            tgbtn_07_af.IsEnabled = false;
+
+            tgbtn_01_bf.IsEnabled = false;
+            tgbtn_02_bf.IsEnabled = false;
+            tgbtn_03_bf.IsEnabled = false;
+            tgbtn_04_bf.IsEnabled = false;
+            tgbtn_05_bf.IsEnabled = false;
+            tgbtn_06_bf.IsEnabled = false;
+            tgbtn_07_bf.IsEnabled = false;
+
+            var assembly = Assembly.GetExecutingAssembly();
+            var verinfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string filever = verinfo.FileVersion;
+
+            var chkver = "\\\\10.1.8.4\\windata\\NEW_TEAM_1\\11231\\root\\mxml2\\version";
+
+
+            if (File.Exists(chkver))
+            {
+                string serverver = File.ReadAllText(chkver);
+                if (filever != serverver)
+                {
+                    PopupBox.Show("프로그램의 버전을 확인하세요\r\n" + "최신 버전은 " + serverver + "입니다.");
+                }
+            }
+
         }
 
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
@@ -134,7 +160,7 @@ namespace MXML2
 
                 tb_StartTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                PopupBox.Show("방해금지 모드를 설정하세요");
+                ToastMessage_.Show("방해금지 모드를\r\n설정하세요");
 
                 tgbtn_01_af.IsEnabled = true;
                 tgbtn_02_af.IsEnabled = true;
@@ -156,7 +182,7 @@ namespace MXML2
             }
             catch (Exception)
             {
-                PopupBox.Show("점검 기기의 정보가 없거나 잘못된 정보입니다");
+                ToastMessage_.Show("점검 기기의 정보가 없거나\r\n잘못된 정보입니다");
             }
             
 
@@ -168,7 +194,7 @@ namespace MXML2
             {
                 tb_EndTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                PopupBox.Show("방해금지 모드를 해제하세요");
+                ToastMessage_.Show("방해금지 모드를\r\n해제하세요");
 
                 btn_START.IsEnabled = false;
                 btn_END.IsEnabled = false;
@@ -238,23 +264,7 @@ namespace MXML2
                 MobileXML.GenerateBeforeXML(BeforeList);
                 MobileXML.GenerateAfterXML(AfterList);
                 
-                string StartTime = DateTime.ParseExact(tb_StartTime.Text, "yyyy-MM-dd HH:mm:ss", null).ToString("yyMMddHHmm");
-
-                string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "*.xml");
-                string ZipPath = "점검결과_" + StartTime + ".zip";
-
-                using (ZipArchive zip = ZipFile.Open(ZipPath, ZipArchiveMode.Create))
-                {
-                    List<string> files = new List<string>();
-                    files.Add(xmlfiles[0]);
-                    files.Add(xmlfiles[1]);
-
-                    foreach (var file in files)
-                    {
-                        zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file));
-                    }
-                }
-
+                
                 ReportList.Add(tb_StartTime.Text);
                 ReportList.Add(tb_EndTime.Text);
                 ReportList.Add(tb_OSVer.Text);
@@ -280,10 +290,44 @@ namespace MXML2
                     ReportList.Add(togle);
                 }
 
+
+                string StartTime = DateTime.ParseExact(tb_StartTime.Text, "yyyy-MM-dd HH:mm:ss", null).ToString("yyMMddHHmm");
+
                 ReportDocument.GenerateReport(ReportList, StartTime);
 
 
-                PopupBox.Show("보고서가 생성되었습니다");
+                string[] xmlfiles = Directory.GetFiles(Environment.CurrentDirectory, "MOBILE_*.xml");
+                string ZipPath = "점검결과_" + StartTime + ".zip";
+
+                using (ZipArchive zip = ZipFile.Open(ZipPath, ZipArchiveMode.Create))
+                {
+                    List<string> files = new List<string>();
+                    files.Add(xmlfiles[0]);
+                    files.Add(xmlfiles[1]);
+
+                    foreach (var file in files)
+                    {
+                        zip.CreateEntryFromFile(file, System.IO.Path.GetFileName(file));
+                    }
+                }
+
+                foreach (var xmlfile in xmlfiles)
+                {
+                    File.Delete(xmlfile);
+                }
+
+                string ResultFolder = "모바일 점검결과_" + StartTime;
+
+                Directory.CreateDirectory(ResultFolder);
+
+                string docxfile = System.IO.Path.GetFileName(Directory.GetFiles(Environment.CurrentDirectory, "대국민*.docx")[0]);
+
+                File.Move(ZipPath, ResultFolder + "\\" + ZipPath);
+                File.Move(docxfile, ResultFolder + "\\" + docxfile);
+
+                System.Diagnostics.Process.Start("explorer.exe", ResultFolder);
+
+                ToastMessage_.Show("보고서가 생성되었습니다");
 
             }
             catch (Exception ex)
@@ -305,6 +349,11 @@ namespace MXML2
             }
         }
 
-        
+        private void Label_Credit_Click(object sender, MouseButtonEventArgs e)
+        {
+            PopupBox.Show("Dinner.At.Home\r\n만든이 : 11231");
+            PopupBox.Show("도와준 사람들 : 우리 팀원들\r\n항상 감사드립니다 :D\r\n고맙습니다");
+            PopupBox.Show("버그 및 피드백\r\nyeewony@0118.kr");
+        }
     }
 }
