@@ -1,0 +1,14 @@
+﻿<Window x:Class="aNewTool_For.NET_Framework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:aNewTool_For.NET_Framework"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="내 PC 돌보미 점검도구 For .NET Framework" HorizontalAlignment="Left" Margin="96.151,110.194,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <Button x:Name="btn_test_" Content="점검 시작" HorizontalAlignment="Left" Margin="264.903,229.554,0,0" VerticalAlignment="Top" Width="265.701" Height="65.274" FontSize="25" Click="Testing"/>
+
+    </Grid>
+</Window>

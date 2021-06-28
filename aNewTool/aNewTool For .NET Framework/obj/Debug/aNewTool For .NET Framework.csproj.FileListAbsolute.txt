@@ -1,0 +1,16 @@
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\bin\Debug\aNewTool_For.NET_Framework.exe
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\bin\Debug\aNewTool_For.NET_Framework.pdb
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\bin\Debug\System.Management.Automation.dll
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool For .NET Framework.csprojAssemblyReference.cache
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\MainWindow.g.cs
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\App.g.cs
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool_For.NET_Framework_MarkupCompile.cache
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool_For.NET_Framework_MarkupCompile.lref
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\MainWindow.baml
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool_For.NET_Framework.g.resources
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool_For.NET_Framework.Properties.Resources.resources
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool For .NET Framework.csproj.GenerateResource.cache
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool For .NET Framework.csproj.CoreCompileInputs.cache
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool For .NET Framework.csproj.CopyComplete
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool_For.NET_Framework.exe
+C:\Users\11217\Desktop\aNewTool\aNewTool for .NET Framework\obj\Debug\aNewTool_For.NET_Framework.pdb
