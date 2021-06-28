@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.IO;
-using System.Reflection;
-using System.Text.RegularExpressions;
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentFormat.OpenXml;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace MXML2
 {
@@ -78,7 +71,7 @@ namespace MXML2
                     Run r = p.Elements<Run>().First();
 
                     Text t = r.Elements<Text>().First();
-                    t.Text = DataInfo[i+5];
+                    t.Text = DataInfo[i + 5];
                 }
 
                 for (int i = 1; i <= 7; i++)
@@ -120,7 +113,7 @@ namespace MXML2
 
                 Text t = r.Elements<Text>().First();
                 t.Text = Data;
-            }            
+            }
         }
 
         public static void ReplaceAfterCell(string DocxFilename, int Cell, string Data)

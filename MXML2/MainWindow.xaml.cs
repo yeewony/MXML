@@ -5,17 +5,8 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MXML2
 {
@@ -108,7 +99,7 @@ namespace MXML2
 
         private void btn_Reset_ResetAll(object sender, RoutedEventArgs e)
         {
-            if (btn_END.IsEnabled==true)
+            if (btn_END.IsEnabled == true)
             {
                 tgbtn_01_bf.IsChecked = false;
                 tgbtn_02_bf.IsChecked = false;
@@ -142,8 +133,8 @@ namespace MXML2
             btn_START.IsEnabled = true;
             btn_END.IsEnabled = false;
             btn_GeneXML.IsEnabled = false;
-                
-            
+
+
         }
 
         private void btn_START_Inspection(object sender, RoutedEventArgs e)
@@ -184,7 +175,7 @@ namespace MXML2
             {
                 ToastMessage_.Show("점검 기기의 정보가 없거나\r\n잘못된 정보입니다");
             }
-            
+
 
         }
 
@@ -233,7 +224,7 @@ namespace MXML2
                                                     (bool)tgbtn_05_bf.IsChecked,(bool)tgbtn_06_bf.IsChecked,(bool)tgbtn_07_bf.IsChecked})
                 {
                     string togle;
-                    if (tgbtn==true)
+                    if (tgbtn == true)
                     {
                         togle = "Y";
                     }
@@ -263,8 +254,8 @@ namespace MXML2
 
                 MobileXML.GenerateBeforeXML(BeforeList);
                 MobileXML.GenerateAfterXML(AfterList);
-                
-                
+
+
                 ReportList.Add(tb_StartTime.Text);
                 ReportList.Add(tb_EndTime.Text);
                 ReportList.Add(tb_OSVer.Text);

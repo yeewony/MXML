@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Windows;
 using System.Xml;
-using System.IO;
 
 namespace MXML2
 {
@@ -61,13 +55,13 @@ namespace MXML2
                     string monum = "MO-0" + i;
 
                     XmlNode mo = Mxml.CreateElement(monum);
-                    XmlNode NAME = Mxml.CreateElement("NAME"); NAME.InnerText = namelist[i-1]; mo.AppendChild(NAME);
-                    XmlNode RESULT = Mxml.CreateElement("RESULT"); RESULT.InnerText = InfoList[i+5]; mo.AppendChild(RESULT);
+                    XmlNode NAME = Mxml.CreateElement("NAME"); NAME.InnerText = namelist[i - 1]; mo.AppendChild(NAME);
+                    XmlNode RESULT = Mxml.CreateElement("RESULT"); RESULT.InnerText = InfoList[i + 5]; mo.AppendChild(RESULT);
                     root.AppendChild(mo);
                 }
 
                 string xmlfile = "MOBILE_" + InfoList[3] + "_Result_Before.xml";
-                
+
                 Mxml.Save(xmlfile);
 
             }
